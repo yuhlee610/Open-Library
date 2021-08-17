@@ -1,7 +1,9 @@
+using BookApi.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +28,10 @@ namespace BookApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Register ApplicationDbContext
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             /*
              * Add Cors:
              * - Allow every one can consume API
@@ -36,7 +42,11 @@ namespace BookApi
                     builder.AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader());
-            }); 
+            });
+
+            // Configure Identity 
+            services.AddAuthentication();
+            services.ConfigureIdentity();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -62,6 +72,8 @@ namespace BookApi
 
             app.UseRouting();
 
+            // Add pipeline Authorize, Authen
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

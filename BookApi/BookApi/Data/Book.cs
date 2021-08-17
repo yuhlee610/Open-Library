@@ -19,8 +19,6 @@ namespace BookApi.Data
         public int CategoryId { get; set; }
         public Category Category { get; set; }
 
-        [ForeignKey("User")]
-        public string UserId { get; set; }
-        public User User { get; set; }
+        public virtual ICollection<User> Users { get; set; }
     }
 }
