@@ -26,6 +26,17 @@ namespace BookApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /*
+             * Add Cors:
+             * - Allow every one can consume API
+             */
+            services.AddCors(opt =>
+            {
+                opt.AddPolicy("AllowAll", builder =>
+                    builder.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            }); 
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -45,6 +56,9 @@ namespace BookApi
             }
 
             app.UseHttpsRedirection();
+
+            // Consume Policy Cors name "AllowAll"
+            app.UseCors("AllowAll");
 
             app.UseRouting();
 
