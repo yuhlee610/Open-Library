@@ -9,7 +9,7 @@ namespace BookApi.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public byte[] Picture { get; set; }
+        public string Picture { get; set; }
         public string Author { get; set; }
         public string Description { get; set; }
         public int Year { get; set; }

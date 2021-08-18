@@ -20,14 +20,20 @@ namespace BookApi.Utilities
             //Open FileStream to read file
             FileStream fStream = new FileStream(sPath, FileMode.Open, FileAccess.Read);
 
+            using(var ms1 = new MemoryStream())
+            {
+                fStream.CopyTo(ms1);
+                data = ms1.ToArray();
+            }
+
             //Use BinaryReader to read file stream into byte array.
-            BinaryReader br = new BinaryReader(fStream);
+            //BinaryReader br = new BinaryReader(fStream);
 
             //When you use BinaryReader, you need to supply number of bytes 
             //to read from file.
             //In this case we want to read entire file. 
             //So supplying total number of bytes.
-            data = br.ReadBytes((int)numBytes);
+            //data = br.ReadBytes((int)numBytes);
 
             return data;
         }
