@@ -13,6 +13,7 @@ namespace BookApi.Configuration
         public MapperInitializer()
         {
             CreateMap<Book, BookDTO>().ForMember(dest => dest.Picture, opt => opt.MapFrom(src => Convert.ToBase64String(src.Picture))).ReverseMap();
+            CreateMap<Category, CategoryDTO>().ReverseMap();
         }
     }
 }

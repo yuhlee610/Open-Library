@@ -60,5 +60,23 @@ namespace BookApi.Controllers
                 return StatusCode(500, "Internal server error. Please  try again error!!");
             }
         }
+
+        [HttpGet("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetBook(int id)
+        {
+            try
+            {
+                var book = await _unitOfWork.Books.Get(expression: b => b.Id == id);
+                var result = _mapper.Map<BookDTO>(book);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Something went wrong in the {nameof(GetBook)}!!");
+                return StatusCode(500, "Internal server error. Please  try again error!!");
+            }
+        }
     }
 }

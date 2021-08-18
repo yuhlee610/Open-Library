@@ -50,19 +50,17 @@ namespace BookApi.Repository
                 }
             }
 
+            Pagination pagingInfo = new Pagination();
             int count = query.AsNoTracking().Count();
             if(pagination != null)
             {
                 query = query.Take(pagination.ItemsPerPage).Skip((pagination.CurrentPage - 1) * pagination.ItemsPerPage);
+
+                pagingInfo.CurrentPage = pagination.CurrentPage > 0 ? pagination.CurrentPage : 1;
+                pagingInfo.TotalItem = count;
             }
 
             var list = await query.AsNoTracking().ToListAsync();
-
-            Pagination pagingInfo = new Pagination()
-            {
-                CurrentPage = pagination.CurrentPage > 0 ? pagination.CurrentPage : 1,
-                TotalItem = count
-            };
 
             return new Tuple<List<T>, Pagination>(list, pagingInfo);
         }
