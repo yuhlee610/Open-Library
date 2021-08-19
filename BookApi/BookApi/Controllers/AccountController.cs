@@ -2,6 +2,7 @@
 using BookApi.Data;
 using BookApi.Models;
 using BookApi.Services;
+using Marvin.Cache.Headers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +32,7 @@ namespace BookApi.Controllers
 
         [HttpPost]
         [Route("Register")]
+        [HttpCacheExpiration(NoStore = true, MaxAge = 0)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -62,6 +64,7 @@ namespace BookApi.Controllers
 
         [HttpPost]
         [Route("Login")]
+        [HttpCacheExpiration(NoStore = true, MaxAge = 0)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]

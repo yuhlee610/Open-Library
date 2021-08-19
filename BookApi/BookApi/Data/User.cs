@@ -14,6 +14,7 @@ namespace BookApi.Data
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Address { get; set; }
 
         public virtual ICollection<Book> Books { get; set; }
     }

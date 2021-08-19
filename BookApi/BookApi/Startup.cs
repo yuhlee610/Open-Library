@@ -1,4 +1,5 @@
-﻿using BookApi.Configuration;
+﻿using AspNetCoreRateLimit;
+using BookApi.Configuration;
 using BookApi.Data;
 using BookApi.IRepository;
 using BookApi.Repository;
@@ -64,6 +65,20 @@ namespace BookApi
             // Config JWT
             services.ConfigureJWT(Configuration);
 
+            /*
+             * Đăng ký sử dụng memmory cache
+             * Dùng cho Rate limit:
+             * App sử dụng memory cache để nhận biết client nào đang request, số lượng request của client
+             */
+            services.AddMemoryCache();
+
+            // Đăng ký Rate Limit
+            services.ConfigureRateLimiting();
+            services.AddHttpContextAccessor();
+
+            // Đăng ký Caching
+            services.ConfigureHttpCacheHeaders();
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -85,6 +100,22 @@ namespace BookApi
 
             // Consume Policy Cors name "AllowAll"
             app.UseCors("AllowAll");
+
+            /* 
+             * Sử dụng middlleware caching
+             * Giải thích: 
+             * - http://example.com?key1=value1 : return from server
+             * - http://example.com?key1=value1 : return from middleware
+             * - http://example.com?key1=value2	: return from server
+             * Request đầu tiên được server response và cache trong middleware
+             * Request thứ 2 giống với Request 1 nên sẽ được response bởi middleware
+             * Request thứ 3 chưa được cache nên sẽ do server Response
+            */
+            app.UseResponseCaching();
+            app.UseHttpCacheHeaders();
+
+            // Đăng ký middleware Rate limit
+            app.UseIpRateLimiting();
 
             app.UseRouting();
 

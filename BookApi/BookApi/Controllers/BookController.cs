@@ -2,6 +2,7 @@
 using BookApi.Data;
 using BookApi.IRepository;
 using BookApi.Models;
+using Marvin.Cache.Headers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -86,6 +87,7 @@ namespace BookApi.Controllers
         [Authorize]
         [HttpPut]
         [Route("BorrowBook")]
+        [HttpCacheExpiration(NoStore = true, MaxAge = 0)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
