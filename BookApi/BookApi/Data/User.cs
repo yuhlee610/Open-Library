@@ -8,6 +8,10 @@ namespace BookApi.Data
 {
     public class User : IdentityUser
     {
+        public User()
+        {
+            this.Books = new HashSet<Book>();
+        }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 

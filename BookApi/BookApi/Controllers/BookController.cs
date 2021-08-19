@@ -2,7 +2,9 @@
 using BookApi.Data;
 using BookApi.IRepository;
 using BookApi.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -20,11 +22,13 @@ namespace BookApi.Controllers
         private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger<BookController> _logger;
         private readonly IMapper _mapper;
-        public BookController(IUnitOfWork unitOfWork, ILogger<BookController> logger, IMapper mapper)
+        private readonly UserManager<User> _userManager;
+        public BookController(IUnitOfWork unitOfWork, ILogger<BookController> logger, IMapper mapper, UserManager<User> userManager)
         {
             _unitOfWork = unitOfWork;
             _logger = logger;
             _mapper = mapper;
+            _userManager = userManager;
         }
 
         [HttpGet]
@@ -75,6 +79,42 @@ namespace BookApi.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex, $"Something went wrong in the {nameof(GetBook)}!!");
+                return StatusCode(500, "Internal server error. Please  try again error!!");
+            }
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("BorrowBook")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> BorrowBook([FromBody] BorrowInfo borrowInfo)
+        {
+            if (!ModelState.IsValid)
+            {
+                _logger.LogError($"Invalid UPDATE attempt in {nameof(BorrowBook)}");
+                return BadRequest(ModelState);
+            }
+            try
+            {
+                var book = await _unitOfWork.Books.Get(expression: b => b.Id == borrowInfo.IdBook, includes: new List<string> { "Users" });
+                var user = await _userManager.FindByIdAsync(borrowInfo.IdUser);
+
+                if(book.Users.FirstOrDefault(u => u.Id == user.Id) != null)
+                {
+                    return BadRequest("User exists");
+                }
+
+                book.Users.Add(user);
+                _unitOfWork.Books.Update(book);
+                await _unitOfWork.Save();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Something went wrong in the {nameof(BorrowBook)}!!");
                 return StatusCode(500, "Internal server error. Please  try again error!!");
             }
         }

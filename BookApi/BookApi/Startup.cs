@@ -2,6 +2,7 @@
 using BookApi.Data;
 using BookApi.IRepository;
 using BookApi.Repository;
+using BookApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -56,6 +57,12 @@ namespace BookApi
 
             // Đăng ký sử dụng AutoMapper
             services.AddAutoMapper(typeof(MapperInitializer));
+
+            // Đăng ký AuthManager
+            services.AddTransient<IAuthManager, AuthManager>();
+
+            // Config JWT
+            services.ConfigureJWT(Configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
