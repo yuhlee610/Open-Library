@@ -83,16 +83,21 @@ namespace BookApi.Services
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
-            claims.Add(new Claim(ClaimTypes.NameIdentifier, _user.Id));
-
             return claims;
         }
 
-        public async Task<bool> ValidateUser(LoginUserDTO userDTO)
+        public async Task<User> ValidateUser(LoginUserDTO userDTO)
         {
             _user = await _userManager.FindByEmailAsync(userDTO.Email);
             var validPassword = await _userManager.CheckPasswordAsync(_user, userDTO.Password);
-            return (_user != null && validPassword);
+            if(_user != null && validPassword == true)
+            {
+                return _user;
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

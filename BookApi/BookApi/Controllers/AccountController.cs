@@ -6,6 +6,7 @@ using Marvin.Cache.Headers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -21,13 +22,15 @@ namespace BookApi.Controllers
         private readonly UserManager<User> _userManager;
         private readonly IAuthManager _authManager;
         private readonly ILogger<AccountController> _logger;
+        private readonly IConfiguration _configuration;
         private readonly IMapper _mapper;
-        public AccountController(UserManager<User> userManager, ILogger<AccountController> logger, IMapper mapper, IAuthManager authManager)
+        public AccountController(UserManager<User> userManager, ILogger<AccountController> logger, IMapper mapper, IAuthManager authManager, IConfiguration configuration)
         {
             _userManager = userManager;
             _logger = logger;
             _mapper = mapper;
             _authManager = authManager;
+            _configuration = configuration;
         }
 
         [HttpPost]
@@ -77,11 +80,18 @@ namespace BookApi.Controllers
             }
             try
             {
-                if(!await _authManager.ValidateUser(userDTO))
+                var user = await _authManager.ValidateUser(userDTO);
+                if (user == null)
                 {
                     return Unauthorized();
                 }
-                return Ok(new { Token = await _authManager.CreateToken() });
+                return Ok(
+                    new 
+                    { 
+                        Token = await _authManager.CreateToken(), 
+                        IdUser = user.Id,
+                        ExpiresIn = DateTime.Now.AddMinutes(Convert.ToDouble(_configuration.GetSection("Jwt").GetSection("lifetime").Value))
+                    });
             }
             catch (Exception ex)
             {

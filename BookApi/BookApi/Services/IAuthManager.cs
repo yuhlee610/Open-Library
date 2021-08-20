@@ -1,4 +1,5 @@
-﻿using BookApi.Models;
+﻿using BookApi.Data;
+using BookApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace BookApi.Services
 {
     public interface IAuthManager
     {
-        Task<bool> ValidateUser(LoginUserDTO userDTO);
+        Task<User> ValidateUser(LoginUserDTO userDTO);
         Task<string> CreateToken();
     }
 }
