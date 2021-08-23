@@ -1,0 +1,1639 @@
+2021-08-22 20:12:55.800 +07:00 [INF] Application is Starting
+2021-08-22 20:12:59.447 +07:00 [INF] User profile is available. Using 'C:\Users\APTS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:12:59.857 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 20:12:59.857 +07:00 [INF] Hosting environment: Development
+2021-08-22 20:12:59.857 +07:00 [INF] Content root path: E:\.Net core Practice\Open Library\BookApi\BookApi
+2021-08-22 20:12:59.903 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/index.html - -
+2021-08-22 20:13:00.031 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/index.html - - - 200 - text/html;charset=utf-8 130.0861ms
+2021-08-22 20:13:00.327 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - -
+2021-08-22 20:13:00.516 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 188.8030ms
+2021-08-22 20:13:04.169 +07:00 [INF] Request starting HTTP/1.1 POST https://localhost:44348/api/Account/Login application/json 60
+2021-08-22 20:13:04.198 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:13:04.201 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 20:13:04.202 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:13:04.203 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:13:04.203 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:13:04.203 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:13:04.674 +07:00 [INF] Executing endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 20:13:04.705 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BookApi.Models.LoginUserDTO) on controller BookApi.Controllers.AccountController (BookApi).
+2021-08-22 20:13:05.350 +07:00 [INF] Login attempt for user@example.com
+2021-08-22 20:13:07.246 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:13:08.513 +07:00 [INF] Executed DbCommand (67ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-08-22 20:13:08.801 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-08-22 20:13:09.071 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-08-22 20:13:09.089 +07:00 [INF] Executed action BookApi.Controllers.AccountController.Login (BookApi) in 4380.1297ms
+2021-08-22 20:13:09.090 +07:00 [INF] Executed endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 20:13:09.093 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:13:09.094 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:13:09 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 20:13:09.096 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:13:09.105 +07:00 [INF] Validation headers generated. ETag: Strong, "9359DC81313E7B3201E232B82B1376F0". Last-Modified: Sun, 22 Aug 2021 13:13:09 GMT
+2021-08-22 20:13:09.106 +07:00 [INF] Generating Vary header.
+2021-08-22 20:13:09.106 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:13:09.119 +07:00 [INF] Request finished HTTP/1.1 POST https://localhost:44348/api/Account/Login application/json 60 - 200 - application/json;+charset=utf-8 4949.3284ms
+2021-08-22 20:13:45.488 +07:00 [INF] Request starting HTTP/1.1 PUT https://localhost:44348/api/Book/BorrowBook application/json 72
+2021-08-22 20:13:45.492 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:13:45.493 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 20:13:45.494 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:13:45.494 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:13:45.497 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 20:13:45.497 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:13:45.545 +07:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenException: IDX10612: Decryption failed. Header.Enc is null or empty, it must be specified.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.DecryptToken(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2021-08-22 20:13:45.609 +07:00 [INF] Bearer was not authenticated. Failure message: IDX10612: Decryption failed. Header.Enc is null or empty, it must be specified.
+2021-08-22 20:13:45.612 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-08-22 20:13:45.621 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-08-22 20:13:45.621 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:13:45.621 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:15:45 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:13:45.621 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 20:13:45.621 +07:00 [INF] Generating Vary header.
+2021-08-22 20:13:45.621 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:13:45.624 +07:00 [INF] Request finished HTTP/1.1 PUT https://localhost:44348/api/Book/BorrowBook application/json 72 - 401 - - 135.8406ms
+2021-08-22 20:14:10.833 +07:00 [INF] Request starting HTTP/1.1 PUT https://localhost:44348/api/Book/BorrowBook application/json 72
+2021-08-22 20:14:10.840 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:14:10.840 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 20:14:10.840 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:14:10.840 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:14:10.840 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 20:14:10.840 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:14:10.871 +07:00 [INF] Successfully validated the token.
+2021-08-22 20:14:10.872 +07:00 [INF] Authorization was successful.
+2021-08-22 20:14:10.872 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:14:10.876 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:14:10.924 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:14:11.094 +07:00 [INF] Executed DbCommand (102ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 20:14:11.175 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 20:14:11.339 +07:00 [ERR] Something went wrong in the BorrowBook!!
+System.ArgumentNullException: Value cannot be null. (Parameter 'key')
+   at System.Collections.Generic.Dictionary`2.FindValue(TKey key)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityReferenceMap.TryGet(Object entity, IEntityType entityType, InternalEntityEntry& entry, Boolean throwOnNonUniqueness)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.TryGetEntry(Object entity, IEntityType entityType, Boolean throwOnTypeMismatch)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.InitialFixup(InternalEntityEntry entry, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.NavigationFixer.StateChanged(InternalEntityEntry entry, EntityState oldState, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntryNotifier.StateChanged(InternalEntityEntry entry, EntityState oldState, Boolean fromQuery)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.FireStateChanged(EntityState oldState)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState oldState, EntityState newState, Boolean acceptChanges, Boolean modifyProperties)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.SetEntityState(EntityState entityState, Boolean acceptChanges, Boolean modifyProperties, Nullable`1 forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.PaintAction(EntityEntryGraphNode`1 node)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityEntryGraphIterator.TraverseGraph[TState](EntityEntryGraphNode`1 node, Func`2 handleNode)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.EntityGraphAttacher.AttachGraph(InternalEntityEntry rootEntry, EntityState targetState, EntityState storeGeneratedWithKeySetTargetState, Boolean forceStateWhenUnknownKey)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.SetEntityState(InternalEntityEntry entry, EntityState entityState)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Update(TEntity entity)
+   at BookApi.Repository.GenericRepository`1.Update(T entity) in E:\.Net core Practice\Open Library\BookApi\BookApi\Repository\GenericRepository.cs:line 70
+   at BookApi.Controllers.BookController.BorrowBook(BorrowInfo borrowInfo) in E:\.Net core Practice\Open Library\BookApi\BookApi\Controllers\BookController.cs:line 112
+2021-08-22 20:14:11.366 +07:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2021-08-22 20:14:11.367 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 490.6976ms
+2021-08-22 20:14:11.367 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:14:11.368 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:14:11.368 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:14:11 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 20:14:11.368 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 20:14:11.368 +07:00 [INF] Generating Vary header.
+2021-08-22 20:14:11.368 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:14:11.370 +07:00 [INF] Request finished HTTP/1.1 PUT https://localhost:44348/api/Book/BorrowBook application/json 72 - 500 - text/plain;+charset=utf-8 537.6317ms
+2021-08-22 20:16:52.405 +07:00 [INF] Request starting HTTP/1.1 PUT https://localhost:44348/api/Book/BorrowBook application/json 72
+2021-08-22 20:16:52.405 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:16:52.405 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 20:16:52.405 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:16:52.405 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:16:52.405 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 20:16:52.405 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:16:52.409 +07:00 [INF] Successfully validated the token.
+2021-08-22 20:16:52.410 +07:00 [INF] Authorization was successful.
+2021-08-22 20:16:52.411 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:16:52.412 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:17:07.255 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:17:07.331 +07:00 [INF] Executed DbCommand (72ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 20:17:07.412 +07:00 [INF] Executed DbCommand (15ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 20:17:07.721 +07:00 [INF] Executed DbCommand (164ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookUser] ([BooksId], [UsersId])
+VALUES (@p0, @p1);
+2021-08-22 20:17:08.114 +07:00 [INF] Executed DbCommand (378ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = -1) (DbType = Binary), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [Author] = @p0, [CategoryId] = @p1, [Description] = @p2, [Name] = @p3, [Picture] = @p4, [Year] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2021-08-22 20:17:08.133 +07:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-08-22 20:17:08.133 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 15721.4789ms
+2021-08-22 20:17:08.133 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:17:08.133 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:17:08.133 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:17:08 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 20:17:08.133 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:17:08.133 +07:00 [INF] Validation headers generated. ETag: Strong, "159C3EE1756FE8CC88E29B5C2925E1BF". Last-Modified: Sun, 22 Aug 2021 13:17:08 GMT
+2021-08-22 20:17:08.133 +07:00 [INF] Generating Vary header.
+2021-08-22 20:17:08.133 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:17:08.134 +07:00 [INF] Request finished HTTP/1.1 PUT https://localhost:44348/api/Book/BorrowBook application/json 72 - 200 - - 15729.4843ms
+2021-08-22 20:29:37.887 +07:00 [INF] Application is Starting
+2021-08-22 20:29:39.162 +07:00 [INF] User profile is available. Using 'C:\Users\APTS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:29:51.229 +07:00 [INF] Application is Starting
+2021-08-22 20:29:52.322 +07:00 [INF] User profile is available. Using 'C:\Users\APTS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:29:52.565 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 20:29:52.565 +07:00 [INF] Hosting environment: Development
+2021-08-22 20:29:52.565 +07:00 [INF] Content root path: E:\.Net core Practice\Open Library\BookApi\BookApi
+2021-08-22 20:29:52.615 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/index.html - -
+2021-08-22 20:29:52.751 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/index.html - - - 200 - text/html;charset=utf-8 137.0682ms
+2021-08-22 20:29:52.975 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - -
+2021-08-22 20:29:53.101 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 126.0170ms
+2021-08-22 20:30:02.743 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - -
+2021-08-22 20:30:02.754 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 10.7117ms
+2021-08-22 20:30:02.995 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/favicon.ico - -
+2021-08-22 20:30:03.012 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:30:03.038 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:30:03.043 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-22 20:30:03.043 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:30:03.045 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:30:03.045 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:30:03.045 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:30:03.213 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:30:03.215 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:32:03 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:30:03.217 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 20:30:03.217 +07:00 [INF] Generating Vary header.
+2021-08-22 20:30:03.217 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:30:03.224 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:30:03.227 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/favicon.ico - - - 404 - - 232.2502ms
+2021-08-22 20:30:41.405 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 20:30:41.414 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:30:41.415 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 10.0365ms
+2021-08-22 20:30:41.418 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 20:30:41.419 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:30:41.419 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:30:41.420 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 20:30:41.420 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:30:41.420 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:30:41.420 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 20:30:41.420 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:30:41.701 +07:00 [INF] Successfully validated the token.
+2021-08-22 20:30:41.704 +07:00 [INF] Authorization was successful.
+2021-08-22 20:30:41.705 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:30:41.747 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:31:34.402 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:31:35.274 +07:00 [INF] Executed DbCommand (134ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 20:31:36.812 +07:00 [INF] Executed DbCommand (22ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 20:31:41.083 +07:00 [INF] Executed DbCommand (26ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookUser] ([BooksId], [UsersId])
+VALUES (@p0, @p1);
+2021-08-22 20:31:41.687 +07:00 [INF] Executed DbCommand (594ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = -1) (DbType = Binary), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [Author] = @p0, [CategoryId] = @p1, [Description] = @p2, [Name] = @p3, [Picture] = @p4, [Year] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2021-08-22 20:31:43.473 +07:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-08-22 20:31:43.478 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 61727.5589ms
+2021-08-22 20:31:43.479 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:31:43.480 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:31:43.480 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:31:43 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 20:31:43.480 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:31:43.487 +07:00 [INF] Validation headers generated. ETag: Strong, "7BB99E7705081F119BDD2ED6D121536B". Last-Modified: Sun, 22 Aug 2021 13:31:43 GMT
+2021-08-22 20:31:43.487 +07:00 [INF] Generating Vary header.
+2021-08-22 20:31:43.487 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:31:43.542 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 200 - - 62123.3671ms
+2021-08-22 20:35:27.431 +07:00 [INF] Application is Starting
+2021-08-22 20:35:28.488 +07:00 [INF] User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-4278707665-1722708574-1578135641-3332427270-254053748\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:35:28.684 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 20:35:28.684 +07:00 [INF] Hosting environment: Production
+2021-08-22 20:35:28.684 +07:00 [INF] Content root path: C:\inetpub\wwwroot\book_api
+2021-08-22 20:35:28.702 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/api/Category - -
+2021-08-22 20:35:28.702 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/api/Book/2 - -
+2021-08-22 20:35:28.730 +07:00 [WRN] Failed to determine the https port for redirect.
+2021-08-22 20:35:28.731 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:35:28.731 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:35:28.737 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:35:28.737 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:35:28.743 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:35:28.743 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:35:28.749 +07:00 [INF] No saved response found in store.
+2021-08-22 20:35:28.749 +07:00 [INF] No saved response found in store.
+2021-08-22 20:35:28.749 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:35:28.749 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:35:28.751 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:35:28.751 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:35:28.751 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:35:28.751 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:35:28.751 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:35:28.751 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:35:29.092 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 20:35:29.092 +07:00 [INF] Executing endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 20:35:29.114 +07:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller BookApi.Controllers.CategoryController (BookApi).
+2021-08-22 20:35:29.117 +07:00 [INF] Route matched with {action = "GetBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBook(Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:35:30.271 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:35:30.271 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:35:30.876 +07:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Categories] AS [c]
+2021-08-22 20:35:30.907 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Categories] AS [c]
+2021-08-22 20:35:30.907 +07:00 [INF] Executed DbCommand (73ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__id_0
+2021-08-22 20:35:30.936 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookApi.Models.CategoryDTO, BookApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-08-22 20:35:30.958 +07:00 [INF] Executed action BookApi.Controllers.CategoryController.GetCategories (BookApi) in 1840.3505ms
+2021-08-22 20:35:30.959 +07:00 [INF] Executed endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 20:35:30.962 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:35:30.963 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:37:30 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:35:30.964 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:35:30.965 +07:00 [INF] Validation headers generated. ETag: Strong, "780438706D079446CBDED2CC7642D83A". Last-Modified: Sun, 22 Aug 2021 13:35:30 GMT
+2021-08-22 20:35:30.965 +07:00 [INF] Generating Vary header.
+2021-08-22 20:35:30.965 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:35:30.976 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:35:30.983 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/api/Category - - - 200 - application/json;+charset=utf-8 2283.3385ms
+2021-08-22 20:35:31.133 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.BookDTO'.
+2021-08-22 20:35:31.135 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBook (BookApi) in 2017.8242ms
+2021-08-22 20:35:31.135 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 20:35:31.135 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:35:31.135 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:37:31 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:35:31.135 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:35:31.137 +07:00 [INF] Validation headers generated. ETag: Strong, "937A6E60D8362B72F4BAD3BCDEF7A6D7". Last-Modified: Sun, 22 Aug 2021 13:35:31 GMT
+2021-08-22 20:35:31.137 +07:00 [INF] Generating Vary header.
+2021-08-22 20:35:31.137 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:35:31.145 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:35:31.146 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/api/Book/2 - - - 200 - application/json;+charset=utf-8 2446.0907ms
+2021-08-22 20:36:37.957 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost/book_api/api/Book/BorrowBook - -
+2021-08-22 20:36:37.959 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:36:37.962 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost/book_api/api/Book/BorrowBook - - - 204 - - 4.6076ms
+2021-08-22 20:42:42.948 +07:00 [INF] Application is shutting down...
+2021-08-22 20:44:32.679 +07:00 [INF] Application is Starting
+2021-08-22 20:44:32.883 +07:00 [INF] User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-4278707665-1722708574-1578135641-3332427270-254053748\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:44:32.997 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 20:44:32.997 +07:00 [INF] Hosting environment: Production
+2021-08-22 20:44:32.997 +07:00 [INF] Content root path: C:\inetpub\wwwroot\book_api
+2021-08-22 20:44:33.014 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/api/Book/2 - -
+2021-08-22 20:44:33.014 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/api/Category - -
+2021-08-22 20:44:33.042 +07:00 [WRN] Failed to determine the https port for redirect.
+2021-08-22 20:44:33.043 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:44:33.043 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:44:33.048 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:44:33.048 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:44:33.054 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:44:33.054 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:44:33.061 +07:00 [INF] No saved response found in store.
+2021-08-22 20:44:33.061 +07:00 [INF] No saved response found in store.
+2021-08-22 20:44:33.061 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:44:33.061 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:44:33.063 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:44:33.063 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:44:33.063 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:44:33.063 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:44:33.063 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:44:33.063 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:44:33.138 +07:00 [INF] Executing endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 20:44:33.138 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 20:44:33.157 +07:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller BookApi.Controllers.CategoryController (BookApi).
+2021-08-22 20:44:33.159 +07:00 [INF] Route matched with {action = "GetBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBook(Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:44:33.982 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:44:33.982 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:44:34.417 +07:00 [INF] Executed DbCommand (65ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__id_0
+2021-08-22 20:44:34.528 +07:00 [INF] Executed DbCommand (184ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Categories] AS [c]
+2021-08-22 20:44:34.546 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Categories] AS [c]
+2021-08-22 20:44:34.557 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookApi.Models.CategoryDTO, BookApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-08-22 20:44:34.557 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.BookDTO'.
+2021-08-22 20:44:34.578 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBook (BookApi) in 1415.4728ms
+2021-08-22 20:44:34.578 +07:00 [INF] Executed action BookApi.Controllers.CategoryController.GetCategories (BookApi) in 1416.7393ms
+2021-08-22 20:44:34.579 +07:00 [INF] Executed endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 20:44:34.579 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 20:44:34.582 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:44:34.582 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:44:34.583 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:46:34 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:44:34.583 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:46:34 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:44:34.584 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:44:34.584 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:44:34.587 +07:00 [INF] Validation headers generated. ETag: Strong, "780438706D079446CBDED2CC7642D83A". Last-Modified: Sun, 22 Aug 2021 13:44:34 GMT
+2021-08-22 20:44:34.587 +07:00 [INF] Validation headers generated. ETag: Strong, "937A6E60D8362B72F4BAD3BCDEF7A6D7". Last-Modified: Sun, 22 Aug 2021 13:44:34 GMT
+2021-08-22 20:44:34.587 +07:00 [INF] Generating Vary header.
+2021-08-22 20:44:34.587 +07:00 [INF] Generating Vary header.
+2021-08-22 20:44:34.587 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:44:34.587 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:44:34.599 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:44:34.606 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:44:34.608 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/api/Book/2 - - - 200 - application/json;+charset=utf-8 1595.1647ms
+2021-08-22 20:44:34.608 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/api/Category - - - 200 - application/json;+charset=utf-8 1595.1648ms
+2021-08-22 20:44:36.056 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost/book_api/api/Book/BorrowBook - -
+2021-08-22 20:44:36.057 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:44:36.058 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost/book_api/api/Book/BorrowBook - - - 204 - - 2.0180ms
+2021-08-22 20:49:01.239 +07:00 [INF] Application is shutting down...
+2021-08-22 20:49:06.908 +07:00 [INF] Application is Starting
+2021-08-22 20:49:07.098 +07:00 [INF] User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-4278707665-1722708574-1578135641-3332427270-254053748\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:49:07.205 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 20:49:07.205 +07:00 [INF] Hosting environment: Production
+2021-08-22 20:49:07.205 +07:00 [INF] Content root path: C:\inetpub\wwwroot\book_api
+2021-08-22 20:49:07.220 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost/book_api/api/Book/BorrowBook - -
+2021-08-22 20:49:07.233 +07:00 [WRN] Failed to determine the https port for redirect.
+2021-08-22 20:49:07.234 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:49:07.242 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost/book_api/api/Book/BorrowBook - - - 204 - - 23.1323ms
+2021-08-22 20:52:20.347 +07:00 [INF] Application is shutting down...
+2021-08-22 20:52:58.471 +07:00 [INF] Application is Starting
+2021-08-22 20:52:58.679 +07:00 [INF] User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-4278707665-1722708574-1578135641-3332427270-254053748\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:52:58.787 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 20:52:58.787 +07:00 [INF] Hosting environment: Production
+2021-08-22 20:52:58.787 +07:00 [INF] Content root path: C:\inetpub\wwwroot\book_api
+2021-08-22 20:52:58.801 +07:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost/book_api/api/Book/BorrowBook - -
+2021-08-22 20:52:58.814 +07:00 [WRN] Failed to determine the https port for redirect.
+2021-08-22 20:52:58.816 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:52:58.824 +07:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost/book_api/api/Book/BorrowBook - - - 204 - - 23.5183ms
+2021-08-22 20:55:22.617 +07:00 [INF] Application is shutting down...
+2021-08-22 20:56:30.357 +07:00 [INF] Application is Starting
+2021-08-22 20:56:31.547 +07:00 [INF] User profile is available. Using 'C:\Users\APTS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:56:31.867 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 20:56:31.867 +07:00 [INF] Hosting environment: Development
+2021-08-22 20:56:31.867 +07:00 [INF] Content root path: E:\.Net core Practice\Open Library\BookApi\BookApi
+2021-08-22 20:56:31.901 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/index.html - -
+2021-08-22 20:56:32.026 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/index.html - - - 200 - text/html;charset=utf-8 126.0083ms
+2021-08-22 20:56:32.321 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - -
+2021-08-22 20:56:32.422 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 100.3108ms
+2021-08-22 20:56:51.509 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book?currentPage=1 - -
+2021-08-22 20:56:51.515 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:56:51.521 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:56:51.551 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:56:51.556 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-22 20:56:51.556 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:56:51.557 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:56:51.557 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:56:51.557 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:56:51.697 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 20:56:51.725 +07:00 [INF] Route matched with {action = "GetBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooks(Int32, Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:56:52.769 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:56:53.370 +07:00 [INF] Executed DbCommand (62ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2021-08-22 20:56:53.408 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 20:56:53.408 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 20:56:53.550 +07:00 [INF] Executed DbCommand (104ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2021-08-22 20:56:55.271 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.ListBookDTO'.
+2021-08-22 20:56:55.287 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBooks (BookApi) in 3559.0097ms
+2021-08-22 20:56:55.288 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 20:56:55.290 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:56:55.292 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:58:55 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:56:55.293 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:56:55.305 +07:00 [INF] Validation headers generated. ETag: Strong, "2AB982BC7C8B71E6CFE34C562B59A07C". Last-Modified: Sun, 22 Aug 2021 13:56:55 GMT
+2021-08-22 20:56:55.305 +07:00 [INF] Generating Vary header.
+2021-08-22 20:56:55.305 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:56:55.325 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:56:55.331 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book?currentPage=1 - - - 200 - application/json;+charset=utf-8 3821.5238ms
+2021-08-22 20:56:58.617 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 20:56:58.618 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:56:58.618 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:56:58.618 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:56:58.618 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-22 20:56:58.618 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:56:58.618 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:56:58.618 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:56:58.618 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:56:58.620 +07:00 [INF] Executing endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 20:56:58.622 +07:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller BookApi.Controllers.CategoryController (BookApi).
+2021-08-22 20:56:58.659 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:56:58.688 +07:00 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Categories] AS [c]
+2021-08-22 20:56:58.692 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Categories] AS [c]
+2021-08-22 20:56:58.697 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookApi.Models.CategoryDTO, BookApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-08-22 20:56:58.698 +07:00 [INF] Executed action BookApi.Controllers.CategoryController.GetCategories (BookApi) in 75.3038ms
+2021-08-22 20:56:58.698 +07:00 [INF] Executed endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 20:56:58.698 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:56:58.698 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:58:58 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:56:58.698 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:56:58.698 +07:00 [INF] Validation headers generated. ETag: Strong, "780438706D079446CBDED2CC7642D83A". Last-Modified: Sun, 22 Aug 2021 13:56:58 GMT
+2021-08-22 20:56:58.698 +07:00 [INF] Generating Vary header.
+2021-08-22 20:56:58.698 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:56:58.698 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:56:58.699 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 200 - application/json;+charset=utf-8 81.3811ms
+2021-08-22 20:57:00.470 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book?currentPage=2 - -
+2021-08-22 20:57:00.470 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:57:00.470 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:57:00.471 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:57:00.471 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-22 20:57:00.471 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:57:00.471 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:57:00.471 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:57:00.471 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:57:00.474 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 20:57:00.474 +07:00 [INF] Route matched with {action = "GetBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooks(Int32, Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:57:00.482 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:57:00.495 +07:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2021-08-22 20:57:00.497 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 20:57:00.497 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 20:57:00.549 +07:00 [INF] Executed DbCommand (50ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2021-08-22 20:57:01.936 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.ListBookDTO'.
+2021-08-22 20:57:01.940 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBooks (BookApi) in 1466.2277ms
+2021-08-22 20:57:01.940 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 20:57:01.940 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:57:01.940 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:59:01 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:57:01.940 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:57:01.948 +07:00 [INF] Validation headers generated. ETag: Strong, "28D692B770AFE392FF1399FD42443C6E". Last-Modified: Sun, 22 Aug 2021 13:57:01 GMT
+2021-08-22 20:57:01.948 +07:00 [INF] Generating Vary header.
+2021-08-22 20:57:01.948 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:57:01.959 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:57:01.959 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book?currentPage=2 - - - 200 - application/json;+charset=utf-8 1489.4612ms
+2021-08-22 20:57:05.522 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book?currentPage=1&categoryId=2 - -
+2021-08-22 20:57:05.523 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:57:05.523 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:57:05.523 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:57:05.523 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-22 20:57:05.523 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:57:05.523 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:57:05.523 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:57:05.523 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:57:05.523 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 20:57:05.523 +07:00 [INF] Route matched with {action = "GetBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooks(Int32, Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:57:05.530 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:57:05.557 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__categoryId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE [b].[CategoryId] = @__categoryId_0
+2021-08-22 20:57:05.557 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 20:57:05.557 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 20:57:05.563 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+WHERE [b].[CategoryId] = @__categoryId_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2021-08-22 20:57:05.567 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.ListBookDTO'.
+2021-08-22 20:57:05.568 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBooks (BookApi) in 45.2013ms
+2021-08-22 20:57:05.568 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 20:57:05.568 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:57:05.568 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:59:05 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:57:05.568 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:57:05.571 +07:00 [INF] Validation headers generated. ETag: Strong, "AD4465015C3E9255523E03455E9160C9". Last-Modified: Sun, 22 Aug 2021 13:57:05 GMT
+2021-08-22 20:57:05.571 +07:00 [INF] Generating Vary header.
+2021-08-22 20:57:05.571 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:57:05.574 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:57:05.574 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book?currentPage=1&categoryId=2 - - - 200 - application/json;+charset=utf-8 51.8932ms
+2021-08-22 20:57:08.376 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/8 - -
+2021-08-22 20:57:08.376 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:57:08.376 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:57:08.376 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:57:08.376 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-22 20:57:08.376 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:57:08.376 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:57:08.377 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:57:08.377 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:57:08.377 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 20:57:08.381 +07:00 [INF] Route matched with {action = "GetBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBook(Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:57:08.383 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:57:08.392 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__id_0
+2021-08-22 20:57:08.398 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.BookDTO'.
+2021-08-22 20:57:08.399 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBook (BookApi) in 17.3953ms
+2021-08-22 20:57:08.399 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 20:57:08.399 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:57:08.399 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:59:08 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:57:08.399 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:57:08.399 +07:00 [INF] Validation headers generated. ETag: Strong, "6AE46E17CF8B57D3954A05118A345B74". Last-Modified: Sun, 22 Aug 2021 13:57:08 GMT
+2021-08-22 20:57:08.399 +07:00 [INF] Generating Vary header.
+2021-08-22 20:57:08.399 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:57:08.400 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:57:08.401 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/8 - - - 200 - application/json;+charset=utf-8 24.9513ms
+2021-08-22 20:57:36.362 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/2 - -
+2021-08-22 20:57:36.363 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:57:36.367 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:57:36.367 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:57:36.369 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-22 20:57:36.369 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:57:36.369 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:57:36.369 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:57:36.372 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:57:36.379 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 20:57:36.380 +07:00 [INF] Route matched with {action = "GetBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBook(Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:57:36.380 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:57:36.418 +07:00 [INF] Executed DbCommand (36ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__id_0
+2021-08-22 20:57:36.593 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.BookDTO'.
+2021-08-22 20:57:36.594 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBook (BookApi) in 214.8916ms
+2021-08-22 20:57:36.595 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 20:57:36.595 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:57:36.595 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:59:36 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:57:36.595 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:57:36.596 +07:00 [INF] Validation headers generated. ETag: Strong, "937A6E60D8362B72F4BAD3BCDEF7A6D7". Last-Modified: Sun, 22 Aug 2021 13:57:36 GMT
+2021-08-22 20:57:36.596 +07:00 [INF] Generating Vary header.
+2021-08-22 20:57:36.596 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:57:36.602 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:57:36.603 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/2 - - - 200 - application/json;+charset=utf-8 240.9407ms
+2021-08-22 20:57:41.488 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 20:57:41.488 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:57:41.489 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 1.0502ms
+2021-08-22 20:57:41.493 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 20:57:41.493 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:57:41.494 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:57:41.494 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 20:57:41.494 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:57:41.494 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:57:41.494 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 20:57:41.494 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:57:41.666 +07:00 [INF] Successfully validated the token.
+2021-08-22 20:57:41.670 +07:00 [INF] Authorization was successful.
+2021-08-22 20:57:41.670 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:57:41.672 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:57:41.690 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:57:41.910 +07:00 [INF] Executed DbCommand (136ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 20:57:41.932 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 20:57:41.987 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 20:57:41.988 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 316.2346ms
+2021-08-22 20:57:41.988 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:57:41.989 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:57:41.989 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:57:41 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 20:57:41.989 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 20:57:41.989 +07:00 [INF] Generating Vary header.
+2021-08-22 20:57:41.989 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:57:41.990 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 496.3287ms
+2021-08-22 20:58:14.467 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 20:58:14.467 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:58:14.468 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 0.3018ms
+2021-08-22 20:58:14.470 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 20:58:14.470 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:58:14.470 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:58:14.470 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 20:58:14.470 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:58:14.470 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:58:14.471 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 20:58:14.471 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:58:14.471 +07:00 [INF] Successfully validated the token.
+2021-08-22 20:58:14.472 +07:00 [INF] Authorization was successful.
+2021-08-22 20:58:14.475 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:58:14.475 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:58:14.476 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:58:14.483 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 20:58:14.537 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 20:59:08.890 +07:00 [INF] Application is Starting
+2021-08-22 20:59:10.048 +07:00 [INF] User profile is available. Using 'C:\Users\APTS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 20:59:10.410 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 20:59:10.410 +07:00 [INF] Hosting environment: Development
+2021-08-22 20:59:10.410 +07:00 [INF] Content root path: E:\.Net core Practice\Open Library\BookApi\BookApi
+2021-08-22 20:59:10.442 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/index.html - -
+2021-08-22 20:59:10.554 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/index.html - - - 200 - text/html;charset=utf-8 113.3838ms
+2021-08-22 20:59:10.772 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - -
+2021-08-22 20:59:10.857 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 85.2848ms
+2021-08-22 20:59:30.750 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 20:59:30.757 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:59:30.766 +07:00 [INF] No cached response available for this request.
+2021-08-22 20:59:30.812 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:59:30.824 +07:00 [INF] No saved response found in store.
+2021-08-22 20:59:30.824 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:59:30.826 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:59:30.826 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 20:59:30.826 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:59:31.048 +07:00 [INF] Executing endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 20:59:31.084 +07:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller BookApi.Controllers.CategoryController (BookApi).
+2021-08-22 20:59:32.250 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:59:32.725 +07:00 [INF] Executed DbCommand (40ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Categories] AS [c]
+2021-08-22 20:59:32.802 +07:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Categories] AS [c]
+2021-08-22 20:59:32.842 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookApi.Models.CategoryDTO, BookApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-08-22 20:59:32.854 +07:00 [INF] Executed action BookApi.Controllers.CategoryController.GetCategories (BookApi) in 1766.1545ms
+2021-08-22 20:59:32.855 +07:00 [INF] Executed endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 20:59:32.858 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:59:32.860 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:01:32 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 20:59:32.861 +07:00 [INF] Generating Validation headers.
+2021-08-22 20:59:32.864 +07:00 [INF] Validation headers generated. ETag: Strong, "780438706D079446CBDED2CC7642D83A". Last-Modified: Sun, 22 Aug 2021 13:59:32 GMT
+2021-08-22 20:59:32.864 +07:00 [INF] Generating Vary header.
+2021-08-22 20:59:32.864 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:59:32.871 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 20:59:32.876 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 200 - application/json;+charset=utf-8 2126.6075ms
+2021-08-22 20:59:34.076 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 20:59:34.077 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:59:34.078 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 2.0859ms
+2021-08-22 20:59:34.083 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 20:59:34.083 +07:00 [INF] CORS policy execution successful.
+2021-08-22 20:59:34.083 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 20:59:34.083 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 20:59:34.083 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 20:59:34.083 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 20:59:34.084 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 20:59:34.084 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 20:59:34.239 +07:00 [INF] Successfully validated the token.
+2021-08-22 20:59:34.242 +07:00 [INF] Authorization was successful.
+2021-08-22 20:59:34.243 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:59:34.257 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 20:59:34.320 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 20:59:34.492 +07:00 [INF] Executed DbCommand (20ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 20:59:34.526 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 20:59:37.649 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 20:59:37.651 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 3393.2482ms
+2021-08-22 20:59:37.651 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 20:59:37.651 +07:00 [INF] Generating expiration headers.
+2021-08-22 20:59:37.651 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 13:59:37 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 20:59:37.651 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 20:59:37.651 +07:00 [INF] Generating Vary header.
+2021-08-22 20:59:37.651 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 20:59:37.653 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 3570.0650ms
+2021-08-22 21:01:21.643 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:01:21.644 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:01:21.648 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 5.0262ms
+2021-08-22 21:01:21.648 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 21:01:21.648 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:01:21.649 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:01:21.649 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:01:21.649 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:01:21.649 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:01:21.649 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:01:21.649 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:01:21.654 +07:00 [INF] Successfully validated the token.
+2021-08-22 21:01:21.655 +07:00 [INF] Authorization was successful.
+2021-08-22 21:01:21.655 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:01:21.655 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:01:21.671 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:01:21.682 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 21:01:21.694 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 21:01:21.694 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 21:01:21.694 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 39.4943ms
+2021-08-22 21:01:21.695 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:01:21.695 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:01:21.695 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:01:21 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:01:21.695 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:01:21.695 +07:00 [INF] Generating Vary header.
+2021-08-22 21:01:21.695 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:01:21.695 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 46.7834ms
+2021-08-22 21:03:35.868 +07:00 [INF] Application is Starting
+2021-08-22 21:03:36.801 +07:00 [INF] User profile is available. Using 'C:\Users\APTS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 21:03:37.046 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 21:03:37.046 +07:00 [INF] Hosting environment: Development
+2021-08-22 21:03:37.046 +07:00 [INF] Content root path: E:\.Net core Practice\Open Library\BookApi\BookApi
+2021-08-22 21:03:37.140 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/index.html - -
+2021-08-22 21:03:37.276 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/index.html - - - 200 - text/html;charset=utf-8 139.6222ms
+2021-08-22 21:03:37.498 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - -
+2021-08-22 21:03:37.611 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 113.1241ms
+2021-08-22 21:03:42.083 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:03:42.088 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:03:42.089 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 6.5256ms
+2021-08-22 21:03:42.093 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 21:03:42.093 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:03:42.112 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:03:42.113 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:03:42.113 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:03:42.114 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:03:42.116 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:03:42.116 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:03:42.393 +07:00 [INF] Successfully validated the token.
+2021-08-22 21:03:42.397 +07:00 [INF] Authorization was successful.
+2021-08-22 21:03:42.398 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:03:42.428 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:03:43.426 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:03:44.067 +07:00 [INF] Executed DbCommand (48ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 21:03:44.133 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 21:03:44.197 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 21:03:44.208 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 1772.4566ms
+2021-08-22 21:03:44.210 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:03:44.216 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:03:44.219 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:03:44 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:03:44.223 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:03:44.223 +07:00 [INF] Generating Vary header.
+2021-08-22 21:03:44.223 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:03:44.235 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 2142.4911ms
+2021-08-22 21:05:47.701 +07:00 [INF] Application is Starting
+2021-08-22 21:05:49.027 +07:00 [INF] User profile is available. Using 'C:\Users\APTS\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-22 21:05:49.292 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-22 21:05:49.292 +07:00 [INF] Hosting environment: Development
+2021-08-22 21:05:49.292 +07:00 [INF] Content root path: E:\.Net core Practice\Open Library\BookApi\BookApi
+2021-08-22 21:05:49.405 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/2 - -
+2021-08-22 21:05:49.405 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 21:05:49.405 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/index.html - -
+2021-08-22 21:05:49.439 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:05:49.439 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:05:49.446 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:05:49.446 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:05:49.466 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:05:49.466 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:05:49.474 +07:00 [INF] No saved response found in store.
+2021-08-22 21:05:49.474 +07:00 [INF] No saved response found in store.
+2021-08-22 21:05:49.474 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:05:49.474 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:05:49.476 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:05:49.476 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:05:49.477 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:05:49.477 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:05:49.477 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:05:49.477 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:05:49.550 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/index.html - - - 200 - text/html;charset=utf-8 146.5434ms
+2021-08-22 21:05:49.719 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 21:05:49.757 +07:00 [INF] Route matched with {action = "GetBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBook(Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:05:49.841 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - -
+2021-08-22 21:05:49.954 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 112.8666ms
+2021-08-22 21:05:50.780 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:05:51.121 +07:00 [INF] Executing endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 21:05:51.123 +07:00 [INF] Route matched with {action = "GetCategories", controller = "Category"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCategories() on controller BookApi.Controllers.CategoryController (BookApi).
+2021-08-22 21:05:51.154 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:05:51.303 +07:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Categories] AS [c]
+2021-08-22 21:05:51.314 +07:00 [INF] Executed DbCommand (34ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__id_0
+2021-08-22 21:05:51.351 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Name]
+FROM [Categories] AS [c]
+2021-08-22 21:05:51.369 +07:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookApi.Models.CategoryDTO, BookApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2021-08-22 21:05:51.369 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.BookDTO'.
+2021-08-22 21:05:51.380 +07:00 [INF] Executed action BookApi.Controllers.CategoryController.GetCategories (BookApi) in 253.4819ms
+2021-08-22 21:05:51.380 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBook (BookApi) in 1619.2542ms
+2021-08-22 21:05:51.381 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 21:05:51.381 +07:00 [INF] Executed endpoint 'BookApi.Controllers.CategoryController.GetCategories (BookApi)'
+2021-08-22 21:05:51.383 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:05:51.383 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:05:51.385 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:07:51 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 21:05:51.385 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:07:51 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 21:05:51.386 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:05:51.386 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:05:51.389 +07:00 [INF] Validation headers generated. ETag: Strong, "780438706D079446CBDED2CC7642D83A". Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT
+2021-08-22 21:05:51.389 +07:00 [INF] Validation headers generated. ETag: Strong, "937A6E60D8362B72F4BAD3BCDEF7A6D7". Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT
+2021-08-22 21:05:51.389 +07:00 [INF] Generating Vary header.
+2021-08-22 21:05:51.389 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:05:51.389 +07:00 [INF] Generating Vary header.
+2021-08-22 21:05:51.389 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:05:51.396 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:05:51.401 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:05:51.402 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 200 - application/json;+charset=utf-8 1999.1719ms
+2021-08-22 21:05:51.402 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/2 - - - 200 - application/json;+charset=utf-8 1999.4266ms
+2021-08-22 21:06:56.443 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - -
+2021-08-22 21:06:56.447 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:06:56.449 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - - - 204 - - 5.6217ms
+2021-08-22 21:06:56.453 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48
+2021-08-22 21:06:56.453 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:06:56.454 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:06:56.454 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:06:56.454 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:06:56.454 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:06:56.454 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:06:56.454 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:06:56.463 +07:00 [INF] Executing endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:06:56.467 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BookApi.Models.LoginUserDTO) on controller BookApi.Controllers.AccountController (BookApi).
+2021-08-22 21:06:56.489 +07:00 [INF] Login attempt for user@example.com
+2021-08-22 21:06:56.501 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:06:56.523 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-08-22 21:06:56.708 +07:00 [INF] Executed DbCommand (52ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-08-22 21:06:56.837 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-08-22 21:06:56.843 +07:00 [INF] Executed action BookApi.Controllers.AccountController.Login (BookApi) in 375.9645ms
+2021-08-22 21:06:56.843 +07:00 [INF] Executed endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:06:56.843 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:06:56.843 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:06:56 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:06:56.843 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:06:56.843 +07:00 [INF] Validation headers generated. ETag: Strong, "FA8C36B15E9765B44F867BCAEF037A9D". Last-Modified: Sun, 22 Aug 2021 14:06:56 GMT
+2021-08-22 21:06:56.843 +07:00 [INF] Generating Vary header.
+2021-08-22 21:06:56.843 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:06:56.846 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48 - 200 - application/json;+charset=utf-8 393.1763ms
+2021-08-22 21:07:05.578 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book?currentPage=1 - -
+2021-08-22 21:07:05.582 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:07:05.583 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:07:05.583 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:07:05.583 +07:00 [INF] No saved response found in store.
+2021-08-22 21:07:05.583 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:07:05.583 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:07:05.583 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:07:05.583 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:07:05.583 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 21:07:05.587 +07:00 [INF] Route matched with {action = "GetBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooks(Int32, Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:07:05.594 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:07:05.597 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2021-08-22 21:07:05.600 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 21:07:05.600 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 21:07:05.632 +07:00 [INF] Executed DbCommand (30ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2021-08-22 21:07:06.828 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.ListBookDTO'.
+2021-08-22 21:07:06.834 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBooks (BookApi) in 1247.1865ms
+2021-08-22 21:07:06.834 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 21:07:06.834 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:07:06.834 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:09:06 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 21:07:06.834 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:07:06.841 +07:00 [INF] Validation headers generated. ETag: Strong, "2AB982BC7C8B71E6CFE34C562B59A07C". Last-Modified: Sun, 22 Aug 2021 14:07:06 GMT
+2021-08-22 21:07:06.841 +07:00 [INF] Generating Vary header.
+2021-08-22 21:07:06.841 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:07:06.853 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:07:06.853 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book?currentPage=1 - - - 200 - application/json;+charset=utf-8 1275.5628ms
+2021-08-22 21:07:09.410 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:07:09.410 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:07:09.410 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 0.2728ms
+2021-08-22 21:07:09.414 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 21:07:09.414 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:07:09.414 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:07:09.414 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:07:09.414 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:07:09.414 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:07:09.414 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:07:09.414 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:07:09.466 +07:00 [INF] Successfully validated the token.
+2021-08-22 21:07:09.470 +07:00 [INF] Authorization was successful.
+2021-08-22 21:07:09.470 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:07:09.472 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:07:09.476 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:07:09.544 +07:00 [INF] Executed DbCommand (7ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 21:07:09.563 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 21:07:09.565 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 21:07:09.565 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 92.8638ms
+2021-08-22 21:07:09.565 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:07:09.565 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:07:09.565 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:07:09 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:07:09.565 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:07:09.565 +07:00 [INF] Generating Vary header.
+2021-08-22 21:07:09.565 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:07:09.566 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 152.8210ms
+2021-08-22 21:07:59.118 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:07:59.118 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:07:59.118 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 0.3822ms
+2021-08-22 21:07:59.123 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 21:07:59.123 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:07:59.123 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:07:59.123 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:07:59.123 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:07:59.123 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:07:59.123 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:07:59.123 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:07:59.125 +07:00 [INF] Successfully validated the token.
+2021-08-22 21:07:59.127 +07:00 [INF] Authorization was successful.
+2021-08-22 21:07:59.127 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:07:59.128 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:07:59.129 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:07:59.141 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 21:07:59.149 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 21:07:59.150 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 21:07:59.150 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 22.3211ms
+2021-08-22 21:07:59.150 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:07:59.150 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:07:59.150 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:07:59 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:07:59.150 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:07:59.150 +07:00 [INF] Generating Vary header.
+2021-08-22 21:07:59.150 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:07:59.151 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 27.8297ms
+2021-08-22 21:09:08.548 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:09:08.548 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:09:08.548 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 0.3312ms
+2021-08-22 21:09:08.551 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 21:09:08.551 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:09:08.551 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:09:08.551 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:09:08.551 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:09:08.551 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:09:08.551 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:09:08.551 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:09:08.554 +07:00 [INF] Successfully validated the token.
+2021-08-22 21:09:08.579 +07:00 [INF] Authorization was successful.
+2021-08-22 21:09:08.579 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:09:08.579 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:09:08.580 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:09:08.584 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 21:09:08.603 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 21:09:08.604 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 21:09:08.604 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 24.5534ms
+2021-08-22 21:09:08.604 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:09:08.604 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:09:08.604 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:09:08 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:09:08.604 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:09:08.604 +07:00 [INF] Generating Vary header.
+2021-08-22 21:09:08.604 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:09:08.604 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 53.2665ms
+2021-08-22 21:09:18.265 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 21:09:18.265 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/2 - -
+2021-08-22 21:09:18.265 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:09:18.265 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:09:18.265 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:09:18.265 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:09:18.265 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:09:18.265 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:09:18.266 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:09:18.266 +07:00 [INF] Checking If-None-Match: "937A6E60D8362B72F4BAD3BCDEF7A6D7".
+2021-08-22 21:09:18.266 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:09:18.266 +07:00 [INF] Checking If-None-Match: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:09:18.266 +07:00 [INF] ETag valid: "937A6E60D8362B72F4BAD3BCDEF7A6D7".
+2021-08-22 21:09:18.266 +07:00 [INF] ETag valid: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:09:18.267 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:09:18.267 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:09:18.268 +07:00 [INF] Generation done. ETag: Strong, "937A6E60D8362B72F4BAD3BCDEF7A6D7", Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT.
+2021-08-22 21:09:18.268 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:09:18.268 +07:00 [INF] Generation done. ETag: Strong, "780438706D079446CBDED2CC7642D83A", Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT.
+2021-08-22 21:09:18.268 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:09:18.269 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/2 - - - 304 - - 3.9187ms
+2021-08-22 21:09:18.269 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 304 - - 3.9671ms
+2021-08-22 21:09:18.943 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:09:18.943 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:09:18.943 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 0.2612ms
+2021-08-22 21:09:18.946 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 21:09:18.946 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:09:18.946 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:09:18.946 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:09:18.946 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:09:18.946 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:09:18.946 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:09:18.946 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:09:18.946 +07:00 [INF] Successfully validated the token.
+2021-08-22 21:09:18.946 +07:00 [INF] Authorization was successful.
+2021-08-22 21:09:18.946 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:09:18.946 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:09:18.947 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:09:18.957 +07:00 [INF] Executed DbCommand (9ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 21:09:18.961 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 21:09:18.961 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 21:09:18.962 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 14.9826ms
+2021-08-22 21:09:18.962 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:09:18.962 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:09:18.962 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:09:18 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:09:18.962 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:09:18.962 +07:00 [INF] Generating Vary header.
+2021-08-22 21:09:18.962 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:09:18.962 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 16.2350ms
+2021-08-22 21:09:39.795 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:09:39.795 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:09:39.795 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 0.3767ms
+2021-08-22 21:09:39.801 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 21:09:39.801 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:09:39.801 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:09:39.801 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:09:39.801 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:09:39.801 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:09:39.801 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:09:39.801 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:09:39.804 +07:00 [INF] Successfully validated the token.
+2021-08-22 21:09:39.804 +07:00 [INF] Authorization was successful.
+2021-08-22 21:09:39.804 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:09:39.804 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:09:39.805 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:09:39.814 +07:00 [INF] Executed DbCommand (8ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 21:09:39.851 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 21:09:39.851 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2021-08-22 21:09:39.851 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 46.8842ms
+2021-08-22 21:09:39.851 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:09:39.851 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:09:39.851 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:09:39 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:09:39.852 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:09:39.852 +07:00 [INF] Generating Vary header.
+2021-08-22 21:09:39.852 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:09:39.852 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 400 - text/plain;+charset=utf-8 52.1008ms
+2021-08-22 21:12:18.762 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:12:18.763 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:12:18.763 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 1.5368ms
+2021-08-22 21:12:18.767 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 26
+2021-08-22 21:12:18.767 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:12:18.767 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:12:18.767 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:12:18.767 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:12:18.767 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:12:18.767 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:12:18.767 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:12:18.768 +07:00 [INF] Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2021-08-22 21:12:18.793 +07:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2021-08-22 21:12:18.798 +07:00 [INF] AuthenticationScheme: Bearer was challenged.
+2021-08-22 21:12:18.799 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:12:18.799 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:14:18 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 21:12:18.799 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:12:18.799 +07:00 [INF] Generating Vary header.
+2021-08-22 21:12:18.799 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:12:18.799 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 26 - 401 - - 32.7113ms
+2021-08-22 21:12:40.673 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/2 - -
+2021-08-22 21:12:40.675 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:12:40.679 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:12:40.679 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:12:40.679 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:12:40.679 +07:00 [INF] Checking If-None-Match: "937A6E60D8362B72F4BAD3BCDEF7A6D7".
+2021-08-22 21:12:40.679 +07:00 [INF] ETag valid: "937A6E60D8362B72F4BAD3BCDEF7A6D7".
+2021-08-22 21:12:40.679 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:12:40.679 +07:00 [INF] Generation done. ETag: Strong, "937A6E60D8362B72F4BAD3BCDEF7A6D7", Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT.
+2021-08-22 21:12:40.679 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:12:40.679 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/2 - - - 304 - - 5.9543ms
+2021-08-22 21:13:35.715 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - -
+2021-08-22 21:13:35.716 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:13:35.716 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - - - 204 - - 0.5153ms
+2021-08-22 21:13:35.720 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48
+2021-08-22 21:13:35.721 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:13:35.721 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:13:35.721 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:13:35.721 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:13:35.721 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:13:35.721 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:13:35.721 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:13:35.728 +07:00 [INF] Executing endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:13:35.729 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BookApi.Models.LoginUserDTO) on controller BookApi.Controllers.AccountController (BookApi).
+2021-08-22 21:13:35.732 +07:00 [INF] Login attempt for user@example.com
+2021-08-22 21:13:35.737 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:13:35.746 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-08-22 21:13:35.763 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-08-22 21:13:35.764 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-08-22 21:13:35.764 +07:00 [INF] Executed action BookApi.Controllers.AccountController.Login (BookApi) in 35.5351ms
+2021-08-22 21:13:35.764 +07:00 [INF] Executed endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:13:35.764 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:13:35.765 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:13:35 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:13:35.765 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:13:35.765 +07:00 [INF] Validation headers generated. ETag: Strong, "5B7BF00E697C908C586AE7DBCE93AC82". Last-Modified: Sun, 22 Aug 2021 14:13:35 GMT
+2021-08-22 21:13:35.765 +07:00 [INF] Generating Vary header.
+2021-08-22 21:13:35.765 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:13:35.765 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48 - 200 - application/json;+charset=utf-8 45.4614ms
+2021-08-22 21:13:50.515 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - -
+2021-08-22 21:13:50.515 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:13:50.515 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - - - 204 - - 0.2984ms
+2021-08-22 21:13:50.519 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48
+2021-08-22 21:13:50.519 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:13:50.519 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:13:50.519 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:13:50.519 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:13:50.519 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:13:50.519 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:13:50.519 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:13:50.519 +07:00 [INF] Executing endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:13:50.519 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BookApi.Models.LoginUserDTO) on controller BookApi.Controllers.AccountController (BookApi).
+2021-08-22 21:13:50.530 +07:00 [INF] Login attempt for user@example.com
+2021-08-22 21:13:50.531 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:13:50.536 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-08-22 21:13:50.557 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-08-22 21:13:50.557 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-08-22 21:13:50.557 +07:00 [INF] Executed action BookApi.Controllers.AccountController.Login (BookApi) in 38.0125ms
+2021-08-22 21:13:50.557 +07:00 [INF] Executed endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:13:50.557 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:13:50.557 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:13:50 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:13:50.557 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:13:50.557 +07:00 [INF] Validation headers generated. ETag: Strong, "8BF59DC3145F8C50BAE339A94D591784". Last-Modified: Sun, 22 Aug 2021 14:13:50 GMT
+2021-08-22 21:13:50.557 +07:00 [INF] Generating Vary header.
+2021-08-22 21:13:50.557 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:13:50.558 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48 - 200 - application/json;+charset=utf-8 39.1957ms
+2021-08-22 21:14:02.992 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - -
+2021-08-22 21:14:02.992 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:14:02.993 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - - - 204 - - 0.2951ms
+2021-08-22 21:14:02.996 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48
+2021-08-22 21:14:02.996 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:14:02.996 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:14:02.996 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:14:02.996 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:14:02.996 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:14:02.996 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:14:02.996 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:14:02.996 +07:00 [INF] Executing endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:14:02.996 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BookApi.Models.LoginUserDTO) on controller BookApi.Controllers.AccountController (BookApi).
+2021-08-22 21:14:02.997 +07:00 [INF] Login attempt for user@example.com
+2021-08-22 21:14:02.997 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:14:03.002 +07:00 [INF] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-08-22 21:14:03.016 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-08-22 21:14:03.017 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-08-22 21:14:03.017 +07:00 [INF] Executed action BookApi.Controllers.AccountController.Login (BookApi) in 20.4753ms
+2021-08-22 21:14:03.017 +07:00 [INF] Executed endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:14:03.017 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:14:03.017 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:14:03 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:14:03.017 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:14:03.017 +07:00 [INF] Validation headers generated. ETag: Strong, "B173AEA2A4D236729D433456B0F5E823". Last-Modified: Sun, 22 Aug 2021 14:14:03 GMT
+2021-08-22 21:14:03.017 +07:00 [INF] Generating Vary header.
+2021-08-22 21:14:03.017 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:14:03.018 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48 - 200 - application/json;+charset=utf-8 21.7267ms
+2021-08-22 21:14:07.766 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book?currentPage=1 - -
+2021-08-22 21:14:07.766 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:14:07.766 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:14:07.766 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:14:07.766 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:14:07.766 +07:00 [INF] Checking If-None-Match: "2AB982BC7C8B71E6CFE34C562B59A07C".
+2021-08-22 21:14:07.766 +07:00 [INF] ETag valid: "2AB982BC7C8B71E6CFE34C562B59A07C".
+2021-08-22 21:14:07.766 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:14:07.766 +07:00 [INF] Generation done. ETag: Strong, "2AB982BC7C8B71E6CFE34C562B59A07C", Last-Modified: Sun, 22 Aug 2021 14:07:06 GMT.
+2021-08-22 21:14:07.766 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:14:07.766 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book?currentPage=1 - - - 304 - - 0.5671ms
+2021-08-22 21:14:24.514 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 21:14:24.514 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:14:24.514 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:14:24.514 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:14:24.514 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:14:24.514 +07:00 [INF] Checking If-None-Match: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:14:24.515 +07:00 [INF] ETag valid: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:14:24.515 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:14:24.515 +07:00 [INF] Generation done. ETag: Strong, "780438706D079446CBDED2CC7642D83A", Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT.
+2021-08-22 21:14:24.515 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:14:24.515 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 304 - - 0.7899ms
+2021-08-22 21:14:51.550 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - -
+2021-08-22 21:14:51.550 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:14:51.550 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - - - 204 - - 0.2911ms
+2021-08-22 21:14:51.554 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 47
+2021-08-22 21:14:51.554 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:14:51.554 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:14:51.554 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:14:51.554 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:14:51.554 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:14:51.554 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:14:51.554 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:14:51.555 +07:00 [INF] Executing endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:14:51.555 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BookApi.Models.LoginUserDTO) on controller BookApi.Controllers.AccountController (BookApi).
+2021-08-22 21:14:51.558 +07:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2021-08-22 21:14:51.565 +07:00 [INF] Executed action BookApi.Controllers.AccountController.Login (BookApi) in 9.9778ms
+2021-08-22 21:14:51.565 +07:00 [INF] Executed endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:14:51.565 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:14:51.565 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:14:51 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:14:51.565 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-22 21:14:51.565 +07:00 [INF] Generating Vary header.
+2021-08-22 21:14:51.565 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:14:51.568 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 47 - 400 - application/problem+json;+charset=utf-8 13.8706ms
+2021-08-22 21:15:35.445 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - -
+2021-08-22 21:15:35.445 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:15:35.446 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - - - 204 - - 0.2243ms
+2021-08-22 21:15:35.448 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48
+2021-08-22 21:15:35.448 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:15:35.448 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:15:35.448 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:15:35.448 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:15:35.448 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:15:35.448 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:15:35.448 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:15:35.449 +07:00 [INF] Executing endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:15:35.449 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BookApi.Models.LoginUserDTO) on controller BookApi.Controllers.AccountController (BookApi).
+2021-08-22 21:15:35.449 +07:00 [INF] Login attempt for user@example.com
+2021-08-22 21:15:35.449 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:15:35.453 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-08-22 21:15:35.469 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-08-22 21:15:35.470 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-08-22 21:15:35.470 +07:00 [INF] Executed action BookApi.Controllers.AccountController.Login (BookApi) in 20.9499ms
+2021-08-22 21:15:35.470 +07:00 [INF] Executed endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:15:35.470 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:15:35.470 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:15:35 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:15:35.470 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:15:35.470 +07:00 [INF] Validation headers generated. ETag: Strong, "2A8FCAA1E25DAF1F14DC50F7AAC25EDE". Last-Modified: Sun, 22 Aug 2021 14:15:35 GMT
+2021-08-22 21:15:35.470 +07:00 [INF] Generating Vary header.
+2021-08-22 21:15:35.470 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:15:35.470 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48 - 200 - application/json;+charset=utf-8 22.1783ms
+2021-08-22 21:16:33.509 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 21:16:33.510 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:16:33.511 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:16:33.511 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:16:33.511 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:16:33.511 +07:00 [INF] Checking If-None-Match: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:16:33.511 +07:00 [INF] ETag valid: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:16:33.511 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:16:33.511 +07:00 [INF] Generation done. ETag: Strong, "780438706D079446CBDED2CC7642D83A", Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT.
+2021-08-22 21:16:33.511 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:16:33.515 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 304 - - 4.5603ms
+2021-08-22 21:16:43.745 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - -
+2021-08-22 21:16:43.745 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:16:43.746 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Account/Login - - - 204 - - 1.0228ms
+2021-08-22 21:16:43.749 +07:00 [INF] Request starting HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48
+2021-08-22 21:16:43.750 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:16:43.750 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:16:43.750 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:16:43.750 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:16:43.750 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:16:43.750 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:16:43.750 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:16:43.751 +07:00 [INF] Executing endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:16:43.751 +07:00 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(BookApi.Models.LoginUserDTO) on controller BookApi.Controllers.AccountController (BookApi).
+2021-08-22 21:16:43.754 +07:00 [INF] Login attempt for user@example.com
+2021-08-22 21:16:43.754 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:16:43.759 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2021-08-22 21:16:43.771 +07:00 [INF] Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2021-08-22 21:16:43.771 +07:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType0`3[[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2021-08-22 21:16:43.772 +07:00 [INF] Executed action BookApi.Controllers.AccountController.Login (BookApi) in 20.7085ms
+2021-08-22 21:16:43.772 +07:00 [INF] Executed endpoint 'BookApi.Controllers.AccountController.Login (BookApi)'
+2021-08-22 21:16:43.772 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:16:43.772 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:16:43 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:16:43.772 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:16:43.772 +07:00 [INF] Validation headers generated. ETag: Strong, "67A192FD1A71DADFF370962F11F60C2F". Last-Modified: Sun, 22 Aug 2021 14:16:43 GMT
+2021-08-22 21:16:43.772 +07:00 [INF] Generating Vary header.
+2021-08-22 21:16:43.772 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:16:43.773 +07:00 [INF] Request finished HTTP/2 POST https://localhost:44348/api/Account/Login application/json;charset=UTF-8 48 - 200 - application/json;+charset=utf-8 23.6869ms
+2021-08-22 21:18:12.460 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book?currentPage=1&categoryId=2 - -
+2021-08-22 21:18:12.461 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:18:12.463 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:18:12.463 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:18:12.463 +07:00 [INF] No saved response found in store.
+2021-08-22 21:18:12.463 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:18:12.463 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:18:12.463 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:18:12.463 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:18:12.464 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 21:18:12.464 +07:00 [INF] Route matched with {action = "GetBooks", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooks(Int32, Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:18:12.467 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:18:12.470 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__categoryId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+WHERE [b].[CategoryId] = @__categoryId_0
+2021-08-22 21:18:12.471 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 21:18:12.471 +07:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2021-08-22 21:18:12.475 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__categoryId_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+WHERE [b].[CategoryId] = @__categoryId_0
+ORDER BY (SELECT 1)
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+2021-08-22 21:18:12.479 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.ListBookDTO'.
+2021-08-22 21:18:12.479 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBooks (BookApi) in 15.3654ms
+2021-08-22 21:18:12.479 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBooks (BookApi)'
+2021-08-22 21:18:12.480 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:18:12.480 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:20:12 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 21:18:12.480 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:18:12.481 +07:00 [INF] Validation headers generated. ETag: Strong, "AD4465015C3E9255523E03455E9160C9". Last-Modified: Sun, 22 Aug 2021 14:18:12 GMT
+2021-08-22 21:18:12.481 +07:00 [INF] Generating Vary header.
+2021-08-22 21:18:12.481 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:18:12.490 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:18:12.490 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book?currentPage=1&categoryId=2 - - - 200 - application/json;+charset=utf-8 30.3115ms
+2021-08-22 21:18:13.434 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/8 - -
+2021-08-22 21:18:13.434 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:18:13.434 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:18:13.434 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:18:13.434 +07:00 [INF] No saved response found in store.
+2021-08-22 21:18:13.434 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:18:13.434 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:18:13.434 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-22 21:18:13.434 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:18:13.435 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 21:18:13.435 +07:00 [INF] Route matched with {action = "GetBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBook(Int32) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:18:13.435 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:18:13.439 +07:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__id_0
+2021-08-22 21:18:13.440 +07:00 [INF] Executing OkObjectResult, writing value of type 'BookApi.Models.BookDTO'.
+2021-08-22 21:18:13.440 +07:00 [INF] Executed action BookApi.Controllers.BookController.GetBook (BookApi) in 5.6518ms
+2021-08-22 21:18:13.440 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.GetBook (BookApi)'
+2021-08-22 21:18:13.440 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:18:13.440 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:20:13 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-22 21:18:13.440 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:18:13.441 +07:00 [INF] Validation headers generated. ETag: Strong, "6AE46E17CF8B57D3954A05118A345B74". Last-Modified: Sun, 22 Aug 2021 14:18:13 GMT
+2021-08-22 21:18:13.441 +07:00 [INF] Generating Vary header.
+2021-08-22 21:18:13.441 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:18:13.442 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:18:13.442 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/8 - - - 200 - application/json;+charset=utf-8 8.6170ms
+2021-08-22 21:18:15.781 +07:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - -
+2021-08-22 21:18:15.781 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:18:15.781 +07:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:44348/api/Book/BorrowBook - - - 204 - - 0.1692ms
+2021-08-22 21:18:15.784 +07:00 [INF] Request starting HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60
+2021-08-22 21:18:15.784 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:18:15.784 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:18:15.784 +07:00 [INF] Not valid - method isn't GET or HEAD.
+2021-08-22 21:18:15.784 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-22 21:18:15.784 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-22 21:18:15.784 +07:00 [INF] Not valid - no If Match or If Unmodified-Since headers.
+2021-08-22 21:18:15.784 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-22 21:18:15.784 +07:00 [INF] Successfully validated the token.
+2021-08-22 21:18:15.784 +07:00 [INF] Authorization was successful.
+2021-08-22 21:18:15.784 +07:00 [INF] Executing endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:18:15.784 +07:00 [INF] Route matched with {action = "BorrowBook", controller = "Book"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] BorrowBook(BookApi.Models.BorrowInfo) on controller BookApi.Controllers.BookController (BookApi).
+2021-08-22 21:18:15.785 +07:00 [INF] Entity Framework Core 5.0.9 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2021-08-22 21:18:15.791 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@__borrowInfo_IdBook_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Author], [t].[CategoryId], [t].[Description], [t].[Name], [t].[Picture], [t].[Year], [t0].[Id], [t0].[AccessFailedCount], [t0].[Address], [t0].[ConcurrencyStamp], [t0].[Email], [t0].[EmailConfirmed], [t0].[FirstName], [t0].[LastName], [t0].[LockoutEnabled], [t0].[LockoutEnd], [t0].[NormalizedEmail], [t0].[NormalizedUserName], [t0].[PasswordHash], [t0].[PhoneNumber], [t0].[PhoneNumberConfirmed], [t0].[SecurityStamp], [t0].[TwoFactorEnabled], [t0].[UserName], [t0].[BooksId], [t0].[UsersId]
+FROM (
+    SELECT TOP(1) [b].[Id], [b].[Author], [b].[CategoryId], [b].[Description], [b].[Name], [b].[Picture], [b].[Year]
+    FROM [Books] AS [b]
+    WHERE [b].[Id] = @__borrowInfo_IdBook_0
+) AS [t]
+LEFT JOIN (
+    SELECT [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [b0].[BooksId], [b0].[UsersId]
+    FROM [BookUser] AS [b0]
+    INNER JOIN [AspNetUsers] AS [a] ON [b0].[UsersId] = [a].[Id]
+) AS [t0] ON [t].[Id] = [t0].[BooksId]
+ORDER BY [t].[Id], [t0].[BooksId], [t0].[UsersId], [t0].[Id]
+2021-08-22 21:18:15.793 +07:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[Address], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+2021-08-22 21:18:15.934 +07:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [BookUser] ([BooksId], [UsersId])
+VALUES (@p0, @p1);
+2021-08-22 21:18:15.949 +07:00 [INF] Executed DbCommand (6ms) [Parameters=[@p6='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = -1) (DbType = Binary), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [Books] SET [Author] = @p0, [CategoryId] = @p1, [Description] = @p2, [Name] = @p3, [Picture] = @p4, [Year] = @p5
+WHERE [Id] = @p6;
+SELECT @@ROWCOUNT;
+2021-08-22 21:18:15.969 +07:00 [INF] Executing HttpStatusCodeResult, setting HTTP status code 200
+2021-08-22 21:18:15.969 +07:00 [INF] Executed action BookApi.Controllers.BookController.BorrowBook (BookApi) in 184.7903ms
+2021-08-22 21:18:15.969 +07:00 [INF] Executed endpoint 'BookApi.Controllers.BookController.BorrowBook (BookApi)'
+2021-08-22 21:18:15.969 +07:00 [INF] Generating expiration headers.
+2021-08-22 21:18:15.969 +07:00 [INF] Expiration headers generated. Expires: Sun, 22 Aug 2021 14:18:15 GMT. Cache-Control: public,max-age=0,no-store,must-revalidate.
+2021-08-22 21:18:15.969 +07:00 [INF] Generating Validation headers.
+2021-08-22 21:18:15.969 +07:00 [INF] Validation headers generated. ETag: Strong, "7BB99E7705081F119BDD2ED6D121536B". Last-Modified: Sun, 22 Aug 2021 14:18:15 GMT
+2021-08-22 21:18:15.969 +07:00 [INF] Generating Vary header.
+2021-08-22 21:18:15.969 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-22 21:18:15.970 +07:00 [INF] Request finished HTTP/2 PUT https://localhost:44348/api/Book/BorrowBook application/json 60 - 200 - - 186.0200ms
+2021-08-22 21:22:01.244 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 21:22:01.248 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/8 - -
+2021-08-22 21:22:01.249 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:22:01.249 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:22:01.254 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:22:01.254 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:22:01.255 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:22:01.255 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:22:01.255 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:22:01.255 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:22:01.255 +07:00 [INF] Checking If-None-Match: "6AE46E17CF8B57D3954A05118A345B74".
+2021-08-22 21:22:01.255 +07:00 [INF] Checking If-None-Match: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:22:01.255 +07:00 [INF] ETag valid: "6AE46E17CF8B57D3954A05118A345B74".
+2021-08-22 21:22:01.255 +07:00 [INF] ETag valid: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:22:01.255 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:22:01.255 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:22:01.255 +07:00 [INF] Generation done. ETag: Strong, "6AE46E17CF8B57D3954A05118A345B74", Last-Modified: Sun, 22 Aug 2021 14:18:13 GMT.
+2021-08-22 21:22:01.255 +07:00 [INF] Generation done. ETag: Strong, "780438706D079446CBDED2CC7642D83A", Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT.
+2021-08-22 21:22:01.255 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:22:01.255 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:22:01.255 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/8 - - - 304 - - 7.8496ms
+2021-08-22 21:22:01.255 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 304 - - 11.4232ms
+2021-08-22 21:24:45.475 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 21:24:45.475 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/8 - -
+2021-08-22 21:24:45.475 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:24:45.475 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:24:45.476 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:24:45.476 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:24:45.476 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:24:45.476 +07:00 [INF] Checking If-None-Match: "6AE46E17CF8B57D3954A05118A345B74".
+2021-08-22 21:24:45.476 +07:00 [INF] ETag valid: "6AE46E17CF8B57D3954A05118A345B74".
+2021-08-22 21:24:45.476 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:24:45.476 +07:00 [INF] Generation done. ETag: Strong, "6AE46E17CF8B57D3954A05118A345B74", Last-Modified: Sun, 22 Aug 2021 14:18:13 GMT.
+2021-08-22 21:24:45.476 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:24:45.479 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/8 - - - 304 - - 4.5229ms
+2021-08-22 21:24:45.479 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:24:45.479 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:24:45.480 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:24:45.481 +07:00 [INF] Checking If-None-Match: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:24:45.481 +07:00 [INF] ETag valid: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:24:45.481 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:24:45.481 +07:00 [INF] Generation done. ETag: Strong, "780438706D079446CBDED2CC7642D83A", Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT.
+2021-08-22 21:24:45.481 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:24:45.481 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 304 - - 6.3865ms
+2021-08-22 21:38:17.275 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Book/8 - -
+2021-08-22 21:38:17.275 +07:00 [INF] Request starting HTTP/2 GET https://localhost:44348/api/Category - -
+2021-08-22 21:38:17.276 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:38:17.276 +07:00 [INF] CORS policy execution successful.
+2021-08-22 21:38:17.277 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:38:17.277 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:38:17.277 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:38:17.277 +07:00 [INF] Checking If-None-Match: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:38:17.277 +07:00 [INF] ETag valid: "780438706D079446CBDED2CC7642D83A".
+2021-08-22 21:38:17.277 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:38:17.277 +07:00 [INF] Generation done. ETag: Strong, "780438706D079446CBDED2CC7642D83A", Last-Modified: Sun, 22 Aug 2021 14:05:51 GMT.
+2021-08-22 21:38:17.277 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:38:17.277 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Category - - - 304 - - 2.5587ms
+2021-08-22 21:38:17.280 +07:00 [INF] No cached response available for this request.
+2021-08-22 21:38:17.280 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-22 21:38:17.281 +07:00 [INF] Checking If-None-Match.
+2021-08-22 21:38:17.281 +07:00 [INF] Checking If-None-Match: "6AE46E17CF8B57D3954A05118A345B74".
+2021-08-22 21:38:17.281 +07:00 [INF] ETag valid: "6AE46E17CF8B57D3954A05118A345B74".
+2021-08-22 21:38:17.281 +07:00 [INF] Generating 304 - Not Modified.
+2021-08-22 21:38:17.282 +07:00 [INF] Generation done. ETag: Strong, "6AE46E17CF8B57D3954A05118A345B74", Last-Modified: Sun, 22 Aug 2021 14:18:13 GMT.
+2021-08-22 21:38:17.282 +07:00 [INF] The response could not be cached for this request.
+2021-08-22 21:38:17.282 +07:00 [INF] Request finished HTTP/2 GET https://localhost:44348/api/Book/8 - - - 304 - - 7.4213ms

@@ -1,0 +1,89 @@
+.singleBook {
+    background: linear-gradient(180deg, rgba(83, 29, 171, 1) 0%, rgba(100, 29, 171, 1) 50%);
+    min-height: 100vh;
+    padding-top: 135px;
+    padding-bottom: 30px;
+}
+
+.whiteLayout {
+    background-color: white;
+    border-radius: 20px;
+    min-height: 80vh;
+    padding: 30px;
+    display: flex;
+}
+
+.bookThumbnail {
+    width: 40%;
+    height: fit-content;
+}
+
+.bookThumbnail img {
+    width: 100%;
+    height: auto;
+}
+
+.ant-skeleton-element {
+    display: flex;
+    justify-content: center;
+}
+
+.customButton {
+    width: 70%;
+    height: 40px;
+    font-size: 20px;
+    margin: auto;
+    display: block;
+    margin-top: 30px;
+}
+
+.bookInfo {
+    padding: 0 30px;
+    width: 60%;
+}
+
+.bookInfo h3 {
+    font-size: 40px;
+    margin: 0;
+}
+
+.bookInfo div {
+    font-size: 20px;
+}
+
+.bookInfo p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1100px) {
+    .whiteLayout {
+        flex-direction: column;
+    }
+
+    .bookThumbnail,
+    .bookInfo {
+        width: 100%;
+    }
+
+    .bookThumbnail {
+        margin: auto;
+        width: 100%;
+    }
+
+    .bookInfo {
+        padding: 30px 0 0 0;
+    }
+
+    .bookInfo h3 {
+        font-size: 30px;
+    }
+
+    .bookInfo div {
+        font-size: 18px;
+    }
+
+    .bookInfo p {
+        font-size: 16px;
+    }
+}

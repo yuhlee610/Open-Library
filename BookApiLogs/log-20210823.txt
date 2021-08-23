@@ -1,0 +1,13 @@
+2021-08-23 09:02:18.948 +07:00 [INF] Application is Starting
+2021-08-23 09:02:19.142 +07:00 [INF] User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-4278707665-1722708574-1578135641-3332427270-254053748\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-23 09:02:19.236 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-23 09:02:19.237 +07:00 [INF] Hosting environment: Production
+2021-08-23 09:02:19.237 +07:00 [INF] Content root path: C:\inetpub\wwwroot\book_api
+2021-08-23 09:02:19.249 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-23 09:02:19.318 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 200 - text/html;charset=utf-8 70.4221ms
+2021-08-23 09:02:19.480 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/v1/swagger.json - -
+2021-08-23 09:02:19.506 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/favicon-32x32.png - -
+2021-08-23 09:02:19.517 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-08-23 09:02:19.517 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/favicon-32x32.png - - - 200 628 image/png 10.7284ms
+2021-08-23 09:02:19.558 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 78.3236ms
+2021-08-23 09:10:43.498 +07:00 [INF] Application is shutting down...

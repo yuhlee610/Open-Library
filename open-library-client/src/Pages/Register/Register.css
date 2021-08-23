@@ -1,0 +1,16 @@
+.ant-form-item-label label {
+    color: white;
+    font-size: 18px;
+}
+
+.register {
+    background: linear-gradient(180deg, rgba(83, 29, 171, 1) 0%, rgba(100, 29, 171, 1) 50%);
+    min-height: 100vh;
+    padding-top: 135px;
+}
+
+@media screen and (max-width: 768px) {
+    .register {
+        padding-bottom: 30px;
+    }
+}

@@ -54,7 +54,7 @@ namespace BookApi.Repository
             int count = query.AsNoTracking().Count();
             if(pagination != null)
             {
-                query = query.Take(pagination.ItemsPerPage).Skip((pagination.CurrentPage - 1) * pagination.ItemsPerPage);
+                query = query.Skip((pagination.CurrentPage - 1) * pagination.ItemsPerPage).Take(pagination.ItemsPerPage);
 
                 pagingInfo.CurrentPage = pagination.CurrentPage > 0 ? pagination.CurrentPage : 1;
                 pagingInfo.TotalItem = count;

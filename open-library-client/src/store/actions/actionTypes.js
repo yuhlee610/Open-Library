@@ -1,0 +1,17 @@
+export const FETCH_CATEGORIES = 'FETCH_CATEGORIES'
+export const FETCH_CATEGORIES_SUCCESS = 'FETCH_CATEGORIES_SUCCESS'
+
+export const START_LOADING = 'START_LOADING'
+export const END_LOADING = 'END_LOADING'
+
+export const LOGIN = 'LOGIN'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+
+export const REGISTER = 'REGISTER'
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
+
+export const LOGOUT = 'LOGOUT'
+
+export const FETCH_FAIL = 'FETCH_FAIL'
+
+export const RESET_ERROR = 'RESET_ERROR'

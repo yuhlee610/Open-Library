@@ -4,6 +4,7 @@ using BookApi.IRepository;
 using BookApi.Models;
 using Marvin.Cache.Headers;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;

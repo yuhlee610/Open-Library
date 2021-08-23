@@ -1,0 +1,15 @@
+.login {
+    background: linear-gradient(180deg, rgba(83, 29, 171, 1) 0%, rgba(100, 29, 171, 1) 50%);
+    min-height: 100vh;
+    padding-top: 135px;
+}
+
+.form {
+    max-width: 340px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.input {
+    font-size: 18px;
+}

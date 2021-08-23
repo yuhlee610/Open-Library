@@ -1,0 +1,328 @@
+2021-08-21 10:16:48.534 +07:00 [INF] Application is Starting
+2021-08-21 10:16:49.554 +07:00 [INF] User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-4278707665-1722708574-1578135641-3332427270-254053748\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-21 10:16:49.572 +07:00 [INF] Creating key {dc44e32b-82d8-4bcd-9dab-8a0dd6216af1} with creation date 2021-08-21 03:16:49Z, activation date 2021-08-21 03:16:49Z, and expiration date 2021-11-19 03:16:49Z.
+2021-08-21 10:16:49.779 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-21 10:16:49.779 +07:00 [INF] Hosting environment: Production
+2021-08-21 10:16:49.779 +07:00 [INF] Content root path: C:\inetpub\wwwroot\book_api
+2021-08-21 10:16:49.802 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api - -
+2021-08-21 10:16:49.806 +07:00 [WRN] Failed to determine the https port for redirect.
+2021-08-21 10:16:49.815 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:16:49.820 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:16:49.822 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:16:49.822 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:16:49.823 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:16:49.823 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:16:49.823 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:16:50.160 +07:00 [ERR] Connection ID "18374686498462105647", Request ID "80000030-0004-ff00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at BookApi.ServiceExtensions.<>c__DisplayClass1_0.<ConfigureJWT>b__1(JwtBearerOptions o) in E:\.Net core Practice\Open Library\BookApi\BookApi\ServiceExtensions.cs:line 50
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c__DisplayClass11_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.UsePathBaseMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2021-08-21 10:16:50.217 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api - - - 500 - - 416.5601ms
+2021-08-21 10:17:19.029 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:17:19.030 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:17:19.030 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:17:19.030 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:17:19.030 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:17:19.030 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:17:19.030 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:17:19.030 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:17:19.033 +07:00 [ERR] Connection ID "18374686498462105647", Request ID "80000031-0004-ff00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at BookApi.ServiceExtensions.<>c__DisplayClass1_0.<ConfigureJWT>b__1(JwtBearerOptions o) in E:\.Net core Practice\Open Library\BookApi\BookApi\ServiceExtensions.cs:line 50
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c__DisplayClass11_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.UsePathBaseMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2021-08-21 10:17:19.034 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 500 - - 5.3311ms
+2021-08-21 10:18:45.922 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:45.923 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:45.932 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:45.932 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:45.932 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:45.932 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:45.932 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:45.932 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:45.934 +07:00 [ERR] Connection ID "18302628900129210375", Request ID "8000000a-0003-fe00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at BookApi.ServiceExtensions.<>c__DisplayClass1_0.<ConfigureJWT>b__1(JwtBearerOptions o) in E:\.Net core Practice\Open Library\BookApi\BookApi\ServiceExtensions.cs:line 50
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c__DisplayClass11_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.UsePathBaseMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2021-08-21 10:18:45.935 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 500 - - 13.0197ms
+2021-08-21 10:18:49.235 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:49.235 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:49.235 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:49.236 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:49.236 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:49.236 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:49.236 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:49.236 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:49.237 +07:00 [ERR] Connection ID "18302628900129210375", Request ID "8000000b-0003-fe00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at BookApi.ServiceExtensions.<>c__DisplayClass1_0.<ConfigureJWT>b__1(JwtBearerOptions o) in E:\.Net core Practice\Open Library\BookApi\BookApi\ServiceExtensions.cs:line 50
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c__DisplayClass11_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.UsePathBaseMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2021-08-21 10:18:49.238 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 500 - - 2.5756ms
+2021-08-21 10:18:49.787 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:49.787 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:49.788 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:49.788 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:49.788 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:49.788 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:49.788 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:49.788 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:49.789 +07:00 [ERR] Connection ID "18302628900129210375", Request ID "8000000c-0003-fe00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at BookApi.ServiceExtensions.<>c__DisplayClass1_0.<ConfigureJWT>b__1(JwtBearerOptions o) in E:\.Net core Practice\Open Library\BookApi\BookApi\ServiceExtensions.cs:line 50
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c__DisplayClass11_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.UsePathBaseMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2021-08-21 10:18:49.791 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 500 - - 3.5743ms
+2021-08-21 10:18:49.988 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:49.988 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:49.988 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:49.988 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:49.988 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:49.988 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:49.988 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:49.988 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:49.991 +07:00 [INF] Request get:/swagger/index.html from IP ::1 has been blocked, quota 3/5s exceeded by 1. Blocked by rule *, TraceIdentifier 8000000d-0003-fe00-b63f-84710c7967bb.
+2021-08-21 10:18:49.999 +07:00 [INF] Generating expiration headers.
+2021-08-21 10:18:50.003 +07:00 [INF] Expiration headers generated. Expires: Sat, 21 Aug 2021 03:20:50 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-21 10:18:50.006 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-21 10:18:50.006 +07:00 [INF] Generating Vary header.
+2021-08-21 10:18:50.007 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-21 10:18:50.016 +07:00 [INF] The response could not be cached for this request.
+2021-08-21 10:18:50.018 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 429 - text/plain 30.3855ms
+2021-08-21 10:18:50.381 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:50.381 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:50.381 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:50.381 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:50.381 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:50.381 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:50.381 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:50.381 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:50.381 +07:00 [INF] Request get:/swagger/index.html from IP ::1 has been blocked, quota 3/5s exceeded by 2. Blocked by rule *, TraceIdentifier 8000000e-0003-fe00-b63f-84710c7967bb.
+2021-08-21 10:18:50.381 +07:00 [INF] Generating expiration headers.
+2021-08-21 10:18:50.381 +07:00 [INF] Expiration headers generated. Expires: Sat, 21 Aug 2021 03:20:50 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-21 10:18:50.381 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-21 10:18:50.381 +07:00 [INF] Generating Vary header.
+2021-08-21 10:18:50.381 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-21 10:18:50.382 +07:00 [INF] The response could not be cached for this request.
+2021-08-21 10:18:50.382 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 429 - text/plain 0.8576ms
+2021-08-21 10:18:50.590 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:50.590 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:50.590 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:50.590 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:50.590 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:50.590 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:50.590 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:50.590 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:50.590 +07:00 [INF] Request get:/swagger/index.html from IP ::1 has been blocked, quota 3/5s exceeded by 3. Blocked by rule *, TraceIdentifier 8000000f-0003-fe00-b63f-84710c7967bb.
+2021-08-21 10:18:50.590 +07:00 [INF] Generating expiration headers.
+2021-08-21 10:18:50.590 +07:00 [INF] Expiration headers generated. Expires: Sat, 21 Aug 2021 03:20:50 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-21 10:18:50.590 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-21 10:18:50.590 +07:00 [INF] Generating Vary header.
+2021-08-21 10:18:50.590 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-21 10:18:50.591 +07:00 [INF] The response could not be cached for this request.
+2021-08-21 10:18:50.591 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 429 - text/plain 0.6737ms
+2021-08-21 10:18:50.789 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:50.789 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:50.789 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:50.789 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:50.789 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:50.789 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:50.789 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:50.789 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:50.789 +07:00 [INF] Request get:/swagger/index.html from IP ::1 has been blocked, quota 3/5s exceeded by 4. Blocked by rule *, TraceIdentifier 80000010-0003-fe00-b63f-84710c7967bb.
+2021-08-21 10:18:50.789 +07:00 [INF] Generating expiration headers.
+2021-08-21 10:18:50.789 +07:00 [INF] Expiration headers generated. Expires: Sat, 21 Aug 2021 03:20:50 GMT. Cache-Control: private,max-age=120,must-revalidate.
+2021-08-21 10:18:50.789 +07:00 [INF] Not generating Validation headers as the response status code does not indicate succes.
+2021-08-21 10:18:50.789 +07:00 [INF] Generating Vary header.
+2021-08-21 10:18:50.789 +07:00 [INF] Vary header generated: Accept, Accept-Language, Accept-Encoding.
+2021-08-21 10:18:50.789 +07:00 [INF] The response could not be cached for this request.
+2021-08-21 10:18:50.789 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 429 - text/plain 0.6300ms
+2021-08-21 10:18:51.409 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:51.409 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:51.409 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:51.409 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:51.409 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:51.409 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:51.409 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:51.409 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:51.410 +07:00 [ERR] Connection ID "18302628900129210375", Request ID "80000011-0003-fe00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at BookApi.ServiceExtensions.<>c__DisplayClass1_0.<ConfigureJWT>b__1(JwtBearerOptions o) in E:\.Net core Practice\Open Library\BookApi\BookApi\ServiceExtensions.cs:line 50
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c__DisplayClass11_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.UsePathBaseMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2021-08-21 10:18:51.411 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 500 - - 2.0554ms
+2021-08-21 10:18:53.003 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:18:53.003 +07:00 [INF] No cached response available for this request.
+2021-08-21 10:18:53.003 +07:00 [INF] Checking for conditional GET/HEAD.
+2021-08-21 10:18:53.003 +07:00 [INF] Not valid - no If-None-Match or If-Modified-Since headers.
+2021-08-21 10:18:53.003 +07:00 [INF] Don't generate 304 - Not Modified.  Continue.
+2021-08-21 10:18:53.003 +07:00 [INF] Checking for conditional PUT/PATCH.
+2021-08-21 10:18:53.003 +07:00 [INF] Not valid - method isn't PUT or PATCH.
+2021-08-21 10:18:53.003 +07:00 [INF] Don't generate 412 - Precondition Failed.  Continue.
+2021-08-21 10:18:53.004 +07:00 [ERR] Connection ID "18302628900129210375", Request ID "80000012-0003-fe00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.ArgumentNullException: String reference not set to an instance of a String. (Parameter 's')
+   at System.Text.Encoding.GetBytes(String s)
+   at System.Text.UTF8Encoding.UTF8EncodingSealed.GetBytes(String s)
+   at BookApi.ServiceExtensions.<>c__DisplayClass1_0.<ConfigureJWT>b__1(JwtBearerOptions o) in E:\.Net core Practice\Open Library\BookApi\BookApi\ServiceExtensions.cs:line 50
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c__DisplayClass11_0.<Get>b__0()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.get_Value()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd(String name, Func`1 createOptions)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at AspNetCoreRateLimit.RateLimitMiddleware`1.Invoke(HttpContext context)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.HandleResponse(HttpContext httpContext)
+   at Marvin.Cache.Headers.HttpCacheHeadersMiddleware.Invoke(HttpContext httpContext, IValidatorValueInvalidator validatorValueInvalidator)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.UsePathBaseMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2021-08-21 10:18:53.005 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 500 - - 2.3599ms
+2021-08-21 10:21:33.099 +07:00 [INF] Application is shutting down...
+2021-08-21 10:22:06.137 +07:00 [INF] Application is Starting
+2021-08-21 10:22:07.031 +07:00 [INF] User profile not available. Using 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ASP.NET\4.0.30319.0\AutoGenKeys\S-1-5-82-4278707665-1722708574-1578135641-3332427270-254053748\DataProtection' as key repository and Windows DPAPI to encrypt keys at rest.
+2021-08-21 10:22:07.167 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2021-08-21 10:22:07.167 +07:00 [INF] Hosting environment: Production
+2021-08-21 10:22:07.167 +07:00 [INF] Content root path: C:\inetpub\wwwroot\book_api
+2021-08-21 10:22:07.181 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:22:07.259 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 200 - text/html;charset=utf-8 78.7097ms
+2021-08-21 10:22:07.299 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/swagger-ui.css - -
+2021-08-21 10:22:07.299 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/swagger-ui-bundle.js - -
+2021-08-21 10:22:07.300 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/swagger-ui-standalone-preset.js - -
+2021-08-21 10:22:07.316 +07:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2021-08-21 10:22:07.316 +07:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2021-08-21 10:22:07.316 +07:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2021-08-21 10:22:07.320 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/swagger-ui.css - - - 200 142933 text/css 21.3566ms
+2021-08-21 10:22:07.323 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/swagger-ui-standalone-preset.js - - - 200 311804 application/javascript 23.4847ms
+2021-08-21 10:22:07.334 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/swagger-ui-bundle.js - - - 200 986342 application/javascript 34.8463ms
+2021-08-21 10:22:07.558 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/favicon-32x32.png - -
+2021-08-21 10:22:07.560 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-08-21 10:22:07.560 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/favicon-32x32.png - - - 200 628 image/png 2.1554ms
+2021-08-21 10:23:27.972 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/index.html - -
+2021-08-21 10:23:27.972 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/index.html - - - 200 - text/html;charset=utf-8 0.8169ms
+2021-08-21 10:23:28.136 +07:00 [INF] Request starting HTTP/1.1 GET http://localhost/book_api/swagger/favicon-32x32.png - -
+2021-08-21 10:23:28.136 +07:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2021-08-21 10:23:28.137 +07:00 [INF] Request finished HTTP/1.1 GET http://localhost/book_api/swagger/favicon-32x32.png - - - 200 628 image/png 0.9397ms
+2021-08-21 10:24:35.383 +07:00 [INF] Application is shutting down...
